@@ -14,21 +14,22 @@ public class Dolphin {
 
         menu.printMenu();
 
-        int choice = menu.readChoice();
-        boolean checkChoice;
+        boolean checkChoice = true;
 
         do {
+            int choice = menu.readChoice();
             switch (choice) {
                 case 1:
                     System.out.println("Opretter nyt medlem");
-                    checkChoice = true; // Metode der opretter nyt medlem i stedet for
+                    break;
+                    // Metode der opretter nyt medlem i stedet for
                 case 2:
                     System.out.println("noget");
-                    checkChoice = true;
+                    break;
 
                 case 9:
                     System.out.println("Slutter programmet");
-                    checkChoice = true;
+                    checkChoice = false;
                     break;
 
                 default: //Hvis input er "forkert"
@@ -38,6 +39,6 @@ public class Dolphin {
                     checkChoice = false;
             }
         }
-        while (!checkChoice); // Loop der kører, så længe den er false
+        while (checkChoice); // Loop der kører, så længe den er false
     }
 }

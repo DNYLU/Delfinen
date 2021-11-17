@@ -46,6 +46,7 @@ public class FileManager {
         while (scanner.hasNextLine()) {
             members.add(scanner.nextLine().split(","));
         }
+
         return members;
     }
 }
