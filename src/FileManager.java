@@ -17,12 +17,14 @@ public class FileManager {
     public boolean writeLineToCsv(String source) {
         File file = new File(this.path);
         FileWriter fileWriter;
+
         try {
             fileWriter = new FileWriter(file);
             //joins an array that is split with " " together with an ","
             String toFile = String.join(",", source.split(" "));
 
             fileWriter.write(toFile);
+            //The fileWriter instance has to close() after having write() for it to actually write to a file
             fileWriter.close();
         } catch (IOException e) {
             return false;
