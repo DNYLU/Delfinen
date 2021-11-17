@@ -1,8 +1,11 @@
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
+
+import java.io.FileNotFoundException;
 import java.io.IOException;
+
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class FileManager {
     private String path;
@@ -28,7 +31,7 @@ public class FileManager {
         return true;
     }
 
-    public String[] readLineFromCsv() {
+    public ArrayList<String[]> readMembersFromCsv() {
         File file = new File(this.path);
         Scanner scanner;
 
@@ -38,6 +41,11 @@ public class FileManager {
             return null;
         }
 
-        return scanner.nextLine().split(",");
+        ArrayList<String[]> members = new ArrayList<>();
+
+        while (scanner.hasNextLine()) {
+            members.add(scanner.nextLine().split(","));
+        }
+        return members;
     }
 }
