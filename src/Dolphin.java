@@ -35,7 +35,6 @@ public class Dolphin {
                 default: //Hvis input er "forkert"
                     System.out.println("Lorte input");
                     menu.printMenu();
-                    choice = menu.readChoice(); // Så metoden kører igen
                     checkChoice = false;
             }
         }
