@@ -4,6 +4,13 @@ public enum Discipline {
     RYGCRAWL("Rygcrawl"),
     BRYSTSVØMNING("Brystsvømning");
 
+    private final String name;
+
     Discipline(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return this.name;
     }
 }

@@ -73,10 +73,11 @@ public class CreateMember {
     private String chooseDiscipline() {
         Discipline disciplineChoice;
         System.out.println("Vælg disciplin:\n" +
-                Discipline.BUTTERFLY +
-                "\n" + Discipline.CRAWL +
-                "\n" + Discipline.RYGCRAWL +
-                "\n" + Discipline.BRYSTSVØMNING);
+                Discipline.BUTTERFLY.getName() +
+                "\n" + Discipline.CRAWL.getName() +
+                "\n" + Discipline.RYGCRAWL.getName() +
+                "\n" + Discipline.BRYSTSVØMNING.getName()
+        );
 
 
         while (true) {
