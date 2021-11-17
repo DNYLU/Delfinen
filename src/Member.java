@@ -18,14 +18,14 @@ public class Member {
     }
 
     //Pris variabler
-    private int seniorPrice = 1600;
-    private int juniorPrice = 1000;
-    private int passivePrice = 500;
-    private double seniorDiscountPrice = seniorPrice * 0.25;
+    private final int seniorPrice = 1600;
+    private final int juniorPrice = 1000;
+    private final int passivePrice = 500;
+    private final double seniorDiscountPrice = seniorPrice * 0.25;
 
     //Personal info
-    private int memberYearOfBirth;
-    private String memberFirstName;
+    private final int memberYearOfBirth;
+    private final String memberName;
 
     // Jeg har lige lavet et par ændringer, så det måske passer bedre til det jeg skal lave -Lu
 
@@ -44,8 +44,8 @@ public class Member {
     //2021 - Fjernes senere når vi bliver klogere
     private int currentYear = 2021;
 
-    public Member(String memberFirstName, int memberYearOfBirth, SubscriptionType subscriptionType, String swimmerType, String discipline, double bestTime) {
-        this.memberFirstName = memberFirstName;
+    public Member(String memberName, int memberYearOfBirth, SubscriptionType subscriptionType, String swimmerType, String discipline, double bestTime) {
+        this.memberName = memberName;
         this.memberYearOfBirth = memberYearOfBirth;
         this.subscriptionType = subscriptionType;
         this.swimmerType = swimmerType;
@@ -83,8 +83,8 @@ public class Member {
     }
 
     // Getters
-    public String getMemberFirstName() {
-        return memberFirstName;
+    public String getMemberName() {
+        return memberName;
     }
     public int getMemberYearOfBirth() {
         return memberYearOfBirth;
