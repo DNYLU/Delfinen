@@ -4,6 +4,19 @@ public class Dolphin {
         dolphin.run();
     }
 
+    /*
+    * Formand:
+    * Opret nyt medlem
+    * Vis alle medlemmer
+    *
+    * Kassereren:
+    * Vis forventet kontingent
+    * Vis medlemmer i restance
+    *
+    * Svømmetræner:
+    * Registrering af stævne, placering og tid
+    * Oversigt over klubbens top 5 svømmere inden for HVER disciplin*/
+
     private void run() {
         String[] menuItems = new String[10];
         Menu menu = new Menu("MENU", "Choose option", menuItems);
