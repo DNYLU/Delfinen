@@ -5,7 +5,8 @@ public class Dolphin {
 
     }
 
-    /* TODO:
+    /*
+     TODO:
         Formand:
         - Opret nyt medlem
         - Vis alle medlemmer
@@ -14,7 +15,8 @@ public class Dolphin {
         - Vis medlemmer i restance
         Svømmetræner:
         - Registrering af stævne, placering og tid
-        - Oversigt over klubbens top 5 svømmere inden for HVER disciplin*/
+        - Oversigt over klubbens top 5 svømmere inden for HVER disciplin
+        */
 
     private void run() {
         String[] menuItems = new String[10];
