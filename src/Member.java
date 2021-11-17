@@ -1,31 +1,14 @@
 // Lu og Dannie
 public class Member {
-
-    enum SubscriptionType {
-        ACTIVE("Aktiv"),
-        PASSIVE("Passiv");
-
-        SubscriptionType(String type) {
-        }
-    }
-
-    enum AgeGroup {
-        JUNIOR("Junior"),
-        SENIOR("Senior");
-
-        AgeGroup(String ageGroup) {
-        }
-    }
-
     //Pris variabler
-    private int seniorPrice = 1600;
-    private int juniorPrice = 1000;
-    private int passivePrice = 500;
-    private double seniorDiscountPrice = seniorPrice * 0.25;
+    private final int seniorPrice = 1600;
+    private final int juniorPrice = 1000;
+    private final int passivePrice = 500;
+    private final double seniorDiscountPrice = seniorPrice * 0.25;
 
     //Personal info
-    private int memberYearOfBirth;
-    private String memberName;
+    private final int memberYearOfBirth;
+    private final String memberName;
 
     // Jeg har lige lavet et par ændringer, så det måske passer bedre til det jeg skal lave -Lu
 
