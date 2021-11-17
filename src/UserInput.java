@@ -21,5 +21,13 @@ public class UserInput {
         }
         return scan.nextInt();
     }
+
+    public double getDoubleInput() {
+        while (!scan.hasNextDouble()) {
+            msg.errorMessageInt();
+            scan.next();
+        }
+        return scan.nextInt();
+    }
 }
 

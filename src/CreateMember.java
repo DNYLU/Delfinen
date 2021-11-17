@@ -3,6 +3,7 @@ public class CreateMember {
     UserInput userInput = new UserInput();
     MSG msg = new MSG();
     Discipline discipline;
+    //FileManager fileManager = new FileManager();// Find en path
 
     public void run() {
             createMember();
@@ -20,7 +21,6 @@ public class CreateMember {
         memberName = nameCheck("Indtast navn: ");
         System.out.print("Indtast fødselsår: ");
         memberYearOfBirth = userInput.getIntInput();
-
 
         System.out.println(); // Bare en line
 
@@ -117,7 +117,8 @@ public class CreateMember {
             // Gør navnet til lower case
             name = name.toLowerCase();
         }
-
         return name;
     }
+
+
 }

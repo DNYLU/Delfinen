@@ -1,3 +1,4 @@
+//Lu & David
 public enum Discipline {
     BUTTERFLY("Butterfly"),
     CRAWL("Crawl"),
