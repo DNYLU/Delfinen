@@ -18,11 +18,15 @@ public class CreateMember {
         memberName = nameCheck("Indtast navn: ");
         System.out.print("Indtast fødselsår: ");
         memberYearOfBirth = userInput.getIntInput();
+
+
         System.out.println(); // Bare en line
 
-        // Et loop til subscription type
+        // Aktivitetsform:
+
+        // subscriptionType
         while (true) { // Skift while true om lidt til noget bedre
-            System.out.println("Vælg aktivitetsform: "); // Aktiv eller passiv
+            System.out.println("Vælg medlemstype: "); // Aktiv eller passiv
 
             //Bedøm om jeg skal lave en switch her eller if statement
             System.out.println("1. Aktiv");
@@ -37,7 +41,25 @@ public class CreateMember {
                 subscriptionType = "Passiv";
                 break;
             } else {
-                System.out.println("Forkert ");
+                msg.errorMessage();
+            }
+        }
+
+        //swimmerType
+        while (true) {
+            System.out.println("1. Motionist");
+            System.out.println("2. Konkurrencesvømmer");
+
+            int choice = userInput.getIntInput();
+
+            if (choice == 1) {
+                swimmerType = "Motionist";
+                break; // Find en bedre løsning
+            } else if (choice == 2) {
+                swimmerType = "Konkurrencesvømmer";
+                break;
+            } else {
+                msg.errorMessage();
             }
         }
 
