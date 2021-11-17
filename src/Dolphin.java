@@ -2,20 +2,19 @@ public class Dolphin {
     public static void main(String[] args) {
         Dolphin dolphin = new Dolphin();
         dolphin.run();
+
     }
 
-    /*
-    * Formand:
-    * Opret nyt medlem
-    * Vis alle medlemmer
-    *
-    * Kassereren:
-    * Vis forventet kontingent
-    * Vis medlemmer i restance
-    *
-    * Svømmetræner:
-    * Registrering af stævne, placering og tid
-    * Oversigt over klubbens top 5 svømmere inden for HVER disciplin*/
+    /* TODO:
+        Formand:
+        - Opret nyt medlem
+        - Vis alle medlemmer
+        Kassereren:
+        - Vis forventet kontingent
+        - Vis medlemmer i restance
+        Svømmetræner:
+        - Registrering af stævne, placering og tid
+        - Oversigt over klubbens top 5 svømmere inden for HVER disciplin*/
 
     private void run() {
         String[] menuItems = new String[10];
@@ -34,7 +33,10 @@ public class Dolphin {
             switch (choice) {
                 case 1:
                     System.out.println("Opretter nyt medlem");
+                    CreateMember createMember = new CreateMember();
+                    createMember.run();
                     break;
+
                     // Metode der opretter nyt medlem i stedet for
                 case 2:
                     System.out.println("noget");

@@ -25,7 +25,7 @@ public class Member {
 
     //Personal info
     private int memberYearOfBirth;
-    private String memberName;
+    private String memberFirstName;
 
     // Jeg har lige lavet et par ændringer, så det måske passer bedre til det jeg skal lave -Lu
 
@@ -44,8 +44,8 @@ public class Member {
     //2021 - Fjernes senere når vi bliver klogere
     private int currentYear = 2021;
 
-    public Member(String memberName, int memberYearOfBirth, SubscriptionType subscriptionType, String swimmerType, String discipline, double bestTime) {
-        this.memberName = memberName;
+    public Member(String memberFirstName, int memberYearOfBirth, SubscriptionType subscriptionType, String swimmerType, String discipline, double bestTime) {
+        this.memberFirstName = memberFirstName;
         this.memberYearOfBirth = memberYearOfBirth;
         this.subscriptionType = subscriptionType;
         this.swimmerType = swimmerType;
@@ -83,8 +83,8 @@ public class Member {
     }
 
     // Getters
-    public String getMemberName() {
-        return memberName;
+    public String getMemberFirstName() {
+        return memberFirstName;
     }
     public int getMemberYearOfBirth() {
         return memberYearOfBirth;

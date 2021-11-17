@@ -1,10 +1,12 @@
-import java.util.Locale;
-import java.util.Scanner;
-
+// Lu & David
 public class CreateMember {
     UserInput userInput = new UserInput();
     MSG msg = new MSG();
+    Discipline discipline;
 
+    public void run() {
+            createMember();
+    }
 
     private void createMember() {
         //Member info
@@ -22,7 +24,7 @@ public class CreateMember {
 
         System.out.println(); // Bare en line
 
-        // Aktivitetsform:
+        // Aktivitetsform loops
 
         // subscriptionType
         while (true) { // Skift while true om lidt til noget bedre
@@ -41,7 +43,7 @@ public class CreateMember {
                 subscriptionType = "Passiv";
                 break;
             } else {
-                msg.errorMessage();
+                msg.errorMessageInt();
             }
         }
 
@@ -59,10 +61,39 @@ public class CreateMember {
                 swimmerType = "Konkurrencesvømmer";
                 break;
             } else {
-                msg.errorMessage();
+                msg.errorMessageInt();
             }
         }
+        if (swimmerType.equals("Konkurrencesvømmer")) {
+            chooseDiscipline();
+        }
 
+    }
+
+    private String chooseDiscipline() {
+        Discipline disciplineChoice;
+        System.out.println("Vælg disciplin:\n" +
+                Discipline.BUTTERFLY +
+                "\n" + Discipline.CRAWL +
+                "\n" + Discipline.RYGCRAWL +
+                "\n" + Discipline.BRYSTSVØMNING);
+
+
+        while (true) {
+            int choice = userInput.getIntInput();
+
+            if (choice == 1) {
+                disciplineChoice = Discipline.BUTTERFLY;
+            } else if (choice == 2) {
+                disciplineChoice = Discipline.CRAWL;
+            } else if (choice == 3) {
+                disciplineChoice = Discipline.RYGCRAWL;
+            } else if (choice == 4) {
+                disciplineChoice = Discipline.BRYSTSVØMNING;
+            } else {
+                msg.errorMessageInt();
+            }
+        }
     }
 
     // Check om man får et forkert input
