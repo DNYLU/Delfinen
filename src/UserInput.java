@@ -27,7 +27,7 @@ public class UserInput {
             msg.errorMessageInt();
             scan.next();
         }
-        return scan.nextInt();
+        return scan.nextDouble();
     }
 }
 
