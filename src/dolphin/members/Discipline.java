@@ -1,3 +1,5 @@
+package dolphin.members;
+
 //Lu & David
 public enum Discipline {
     BUTTERFLY("Butterfly"),
