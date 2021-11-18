@@ -1,3 +1,5 @@
+package dolphin.util;
+
 import java.util.Scanner;
 
 public class UserInput {

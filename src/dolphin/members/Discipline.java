@@ -1,3 +1,5 @@
+package dolphin.members;
+
 public enum Discipline {
     BUTTERFLY("Butterfly"),
     CRAWL("Crawl"),

@@ -1,3 +1,9 @@
+package dolphin.operations;
+
+import dolphin.members.Discipline;
+import dolphin.util.MSG;
+import dolphin.util.UserInput;
+
 // Lu & David
 public class CreateMember {
     UserInput userInput = new UserInput();
@@ -9,7 +15,7 @@ public class CreateMember {
     }
 
     private void createMember() {
-        //Member info
+        //dolphin.members.Member info
         String memberName;
         int memberYearOfBirth;
         String subscriptionType;

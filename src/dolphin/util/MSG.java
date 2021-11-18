@@ -1,3 +1,5 @@
+package dolphin.util;
+
 public class MSG { //Klasse til evt. fejlbeskeder
 
     public void errorMessageInt() {
