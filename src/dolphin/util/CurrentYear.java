@@ -1,31 +1,28 @@
 package dolphin.util;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class CurrentYear {
 
-  private String formatter;
-  private LocalDateTime CurrentYear;
+  private LocalDate date;
 
-    public CurrentYear(int time, String formatter) {
-      this.formatter = formatter;
-      int year = LocalDateTime.now().getYear();
-      int month = LocalDateTime.now().getMonthValue();
-      int day = LocalDateTime.now().getDayOfMonth();
+    public void setDate() {
+      int year = LocalDate.now().getYear();
+      int month = LocalDate.now().getMonthValue();
+      int day = LocalDate.now().getDayOfMonth();
 
-      LocalDateTime dateTime = LocalDateTime.of(year, month, day,);
-
-
-    public void setCurrentYear(LocalDateTime CurrentYear) {
-      this.CurrentYear = CurrentYear;
+      this.date = LocalDate.of(year, month, day);
     }
 
     public String toString() {
-      return this.formatter.format(this.CurrentYear);
+      this.setDate();
+      return this.date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
     }
 
-    public LocalDateTime getCurrentYear() {
-      return this.CurrentYear;
+    public LocalDate getCurrentYear() {
+      this.setDate();
+      return this.date;
     }
   }
-}
+
