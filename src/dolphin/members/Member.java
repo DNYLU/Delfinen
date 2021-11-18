@@ -1,3 +1,5 @@
+package dolphin.members;
+
 // Lu og Dannie
 public class Member {
 

@@ -1,3 +1,5 @@
+package dolphin.util;
+
 // Lu
 public class MSG { //Klasse til evt. fejlbeskeder
 
