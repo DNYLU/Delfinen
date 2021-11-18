@@ -1,7 +1,7 @@
 package dolphin.util;
-
 import java.util.Scanner;
 
+// Lu
 public class UserInput {
     MSG msg = new MSG();
 

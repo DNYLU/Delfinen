@@ -1,5 +1,4 @@
 package dolphin;
-
 import dolphin.operations.CreateMember;
 
 public class Dolphin {

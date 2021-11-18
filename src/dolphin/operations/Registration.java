@@ -1,4 +1,5 @@
 package dolphin.operations;
+import dolphin.util.UserInput;
 
 public class Registration {
   UserInput userInput = new UserInput();

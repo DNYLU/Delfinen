@@ -1,5 +1,5 @@
 package dolphin.members;
-
+// Lu & David
 public class Subscription {
     private final int seniorPrice = 1600;
     private final int juniorPrice = 1000;
