@@ -20,9 +20,9 @@ public class CurrentYear {
       return this.date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
     }
 
-    public LocalDate getCurrentYear() {
+    public int getCurrentYear() {
       this.setDate();
-      return this.date;
+      return this.date.getYear();
     }
   }
 

@@ -1,5 +1,7 @@
 package dolphin.members;
 
+import dolphin.util.CurrentYear;
+
 import java.util.ArrayList;
 
 // Lu og Dannie
@@ -33,8 +35,8 @@ public class Member {
         this.discipline = discipline;
         this.bestTime = bestTime;
 
-        //2021 - Fjernes senere når vi bliver klogere
-        int currentYear = 2021;
+        //Henter det nuværende år
+        int currentYear = new CurrentYear().getCurrentYear();
         this.memberAge = currentYear - this.memberYearOfBirth;
 
         // Swimmer i forhold til alderen
