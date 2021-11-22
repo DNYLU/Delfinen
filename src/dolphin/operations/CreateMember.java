@@ -1,10 +1,6 @@
 package dolphin.operations;
 
-import dolphin.members.CompetitiveMember;
-import  dolphin.members.Discipline;
-import dolphin.members.Member;
-import dolphin.members.Subscription;
-import dolphin.members.SubscriptionType;
+import dolphin.members.*;
 import dolphin.util.MSG;
 import dolphin.util.UserInput;
 import java.util.ArrayList;
@@ -65,8 +61,8 @@ public class CreateMember {
 
         //swimmerType
         while (true) {
-            System.out.println("1. Motionist");
-            System.out.println("2. Konkurrencesvømmer");
+            System.out.println("1. " + SwimmerType.CASUAL.getName());
+            System.out.println("2. " + SwimmerType.COMPETITIVE.getName());
 
             int choice = userInput.getIntInput();
 
