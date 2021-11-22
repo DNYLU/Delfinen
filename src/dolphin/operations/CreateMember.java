@@ -6,6 +6,7 @@ import dolphin.members.SubscriptionType;
 import dolphin.util.MSG;
 import dolphin.util.UserInput;
 import java.util.ArrayList;
+import java.util.HashSet;
 
 // Lu & David
 public class CreateMember {
@@ -87,7 +88,7 @@ public class CreateMember {
 
     }
 
-    private String chooseDiscipline() {
+    private ArrayList<Discipline> chooseDiscipline() {
         Discipline disciplineChoice;
         System.out.println("Vælg disciplin:\n1. " +
                 Discipline.BUTTERFLY.getName() +
@@ -96,25 +97,28 @@ public class CreateMember {
                 "\n4. " + Discipline.BRYSTSVØMNING.getName() +
                 "\n5. FÆRDIG");
 
+        HashSet<Discipline> disciplines = new HashSet<>();
+
         boolean addingDiciplines = true;
         while (addingDiciplines) {
             int choice = userInput.getIntInput();
 
             if (choice == 1) {
-                disciplineChoice = Discipline.BUTTERFLY;
+                disciplines.add(Discipline.BUTTERFLY);
             } else if (choice == 2) {
-                disciplineChoice = Discipline.CRAWL;
+                disciplines.add(Discipline.CRAWL);
             } else if (choice == 3) {
-                disciplineChoice = Discipline.RYGCRAWL;
+                disciplines.add(Discipline.RYGCRAWL);
             } else if (choice == 4) {
-                disciplineChoice = Discipline.BRYSTSVØMNING;
+                disciplines.add(Discipline.BRYSTSVØMNING);
             } else if (choice == 5) {
                 addingDiciplines = false;
             } else {
                 msg.errorMessageInt();
             }
         }
-        return
+
+        return new ArrayList<>(disciplines);
     }
 
 
