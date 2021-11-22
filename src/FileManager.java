@@ -4,6 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
+//David
 public class FileManager {
     private String path;
 
@@ -17,7 +18,7 @@ public class FileManager {
         try {
             fileWriter = new FileWriter(file);
             //joins an array that is split with " " together with an ","
-            String toFile = String.join(",", source.split(" "));
+            String toFile = String.join(",", source.split("\s+"));
 
             fileWriter.write(toFile);
             fileWriter.close();
