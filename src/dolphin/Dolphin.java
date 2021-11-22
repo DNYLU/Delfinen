@@ -20,8 +20,8 @@ public class Dolphin {
         - Registrering af stævne, placering og tid
         - Oversigt over klubbens top 5 svømmere inden for HVER disciplin
         Filhåndtering:
-        - Vi laver 2 filer som er junoir og senoir.
-        - Inde i de filer har vi de 4 forskellige disipliner, som den skal opdatere selv med de bedste tider inde for det forskellige grene.
+        - Vi laver 2 filer som er junior og senior.
+        - Inde i de filer har vi de 4 forskellige discipliner, som den skal opdatere selv med de bedste tider inde for det forskellige grene.
         - Her bruger vi collection.sort til at finde de bedste tider og placere dem i den rigtige rækkefølge.
         */
 

@@ -1,5 +1,6 @@
 package dolphin.operations;
 
+import dolphin.members.CompetitiveMember;
 import  dolphin.members.Discipline;
 import dolphin.members.Member;
 import dolphin.members.SubscriptionType;
@@ -82,10 +83,9 @@ public class CreateMember {
             }
         }
         if (swimmerType.equals("Konkurrencesvømmer")) {
-            chooseDiscipline();
-
+            ArrayList<Discipline> disciplines = chooseDiscipline();
+            CompetitiveMember member = new CompetitiveMember(memberName, memberYearOfBirth, subscriptionType, swimmerType, disciplines);
         }
-
     }
 
     private ArrayList<Discipline> chooseDiscipline() {
@@ -97,7 +97,7 @@ public class CreateMember {
                 "\n4. " + Discipline.BRYSTSVØMNING.getName() +
                 "\n5. FÆRDIG");
 
-        HashSet<Discipline> disciplines = new HashSet<>();
+        HashSet<Discipline> disciplines = new HashSet<>(); // Der kan ikke være duplicates af disciplin-værdierne
 
         boolean addingDiciplines = true;
         while (addingDiciplines) {
@@ -105,19 +105,24 @@ public class CreateMember {
 
             if (choice == 1) {
                 disciplines.add(Discipline.BUTTERFLY);
+                System.out.println("Butterfly er blevet tilføjet");
             } else if (choice == 2) {
                 disciplines.add(Discipline.CRAWL);
+                System.out.println("Crawl er blevet tilføjet");
             } else if (choice == 3) {
                 disciplines.add(Discipline.RYGCRAWL);
+                System.out.println("Rygcrawl er blevet tilføjet");
             } else if (choice == 4) {
                 disciplines.add(Discipline.BRYSTSVØMNING);
+                System.out.println("Brystsvømning er blevet tilføjet");
             } else if (choice == 5) {
                 addingDiciplines = false;
-            } else {
+            } else if (choice < 1 || choice > 5) {
                 msg.errorMessageInt();
+            } else {
+                System.out.println("Tilføjet disciplin(er): " + disciplines);
             }
         }
-
         return new ArrayList<>(disciplines);
     }
 
