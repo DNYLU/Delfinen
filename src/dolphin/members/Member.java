@@ -18,22 +18,16 @@ public class Member {
     private SubscriptionType subscriptionType; // Aktiv eller passiv
     private AgeGroup ageGroup; // Junior eller Senior
     private String swimmerType; // Motionist eller konkurrencesvømmer
-    private ArrayList<Discipline> disciplines;
 
     // Payment info
     private Subscription subscription;
     private boolean paidSubscription; // Ændres senere
 
-    private String discipline;
-    private double bestTime; // Find et bedre ord for det
-
-    public Member(String memberName, int memberYearOfBirth, SubscriptionType subscriptionType, String swimmerType, String discipline, double bestTime) {
+    public Member(String memberName, int memberYearOfBirth, SubscriptionType subscriptionType, String swimmerType) {
         this.memberName = memberName;
         this.memberYearOfBirth = memberYearOfBirth;
         this.subscriptionType = subscriptionType;
         this.swimmerType = swimmerType;
-        this.discipline = discipline;
-        this.bestTime = bestTime;
 
         //Henter det nuværende år
         int currentYear = new CurrentYear().getCurrentYear();
@@ -49,8 +43,6 @@ public class Member {
         this.subscription = new Subscription(this.ageGroup, this.memberAge, this.subscriptionType);
 
         this.paidSubscription = false; // Hvis subscription ikke er aktivt
-        this.discipline = discipline;
-        this.bestTime = bestTime;
 
     }
 

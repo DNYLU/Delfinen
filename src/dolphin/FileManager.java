@@ -17,12 +17,12 @@ public class FileManager {
         this.path = path;
     }
 
-    public boolean writeLineToCsv(String source) {
+    private boolean writeToCsv(String source, boolean append) {
         File file = new File(this.path);
         FileWriter fileWriter;
 
         try {
-            fileWriter = new FileWriter(file);
+            fileWriter = new FileWriter(file, append);
             //joins an array that is split with " " together with an ","
             String toFile = String.join(",", source.split("\s+"));
 
@@ -34,6 +34,14 @@ public class FileManager {
         }
 
         return true;
+    }
+
+    public boolean writeToCsv(String source) {
+        return this.writeToCsv(source, true);
+    }
+
+    public boolean overWriteFile(String source) {
+        return this.writeToCsv(source, false);
     }
 
     public ArrayList<String[]> readMembersFromCsv() {
