@@ -36,7 +36,7 @@ public class FileManager {
         return true;
     }
 
-    public boolean writeToCsv(String source) {
+    public boolean writeLineToCsv(String source) {
         return this.writeToCsv(source, true);
     }
 
