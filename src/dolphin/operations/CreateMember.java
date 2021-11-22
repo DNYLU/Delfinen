@@ -1,5 +1,6 @@
 package dolphin.operations;
 
+import dolphin.FileManager;
 import dolphin.members.*;
 import dolphin.util.MSG;
 import dolphin.util.UserInput;
@@ -114,16 +115,13 @@ public class CreateMember {
                 System.out.println("Brystsvømning er blevet tilføjet");
             } else if (choice == 5) {
                 addingDiciplines = false;
+                System.out.println("Tilføjet disciplin(er): " + disciplines);
             } else if (choice < 1 || choice > 5) {
                 msg.errorMessageInt();
-            } else {
-                System.out.println("Tilføjet disciplin(er): " + disciplines);
             }
         }
         return new ArrayList<>(disciplines);
     }
-
-
 
     // Check om man får et forkert input
     private String nameCheck(String input) {
@@ -147,4 +145,14 @@ public class CreateMember {
         }
         return name;
     }
+
+    public void addToCasualFile(Member member) {
+        FileManager fileManager = new FileManager("casualFile.csv");
+        fileManager.writeLineToCsv(casualMembers);
+    }
+
+    public void addToCompetitiveFile(CompetitiveMember competitiveMember) {
+
+    }
+
 }

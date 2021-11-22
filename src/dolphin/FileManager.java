@@ -32,7 +32,6 @@ public class FileManager {
         } catch (IOException e) {
             return false;
         }
-
         return true;
     }
 

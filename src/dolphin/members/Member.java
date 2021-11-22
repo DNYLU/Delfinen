@@ -8,9 +8,9 @@ import java.util.ArrayList;
 public class Member {
 
     //Personal info
+    private String memberName;
     private final int memberYearOfBirth;
-    private final String memberName;
-    private final int memberAge;
+    private int memberAge;
 
     // Jeg har lige lavet et par ændringer, så det måske passer bedre til det jeg skal lave -Lu
 
@@ -21,7 +21,6 @@ public class Member {
 
     // Payment info
     private Subscription subscription;
-    private boolean paidSubscription; // Ændres senere
 
     public Member(String memberName, int memberYearOfBirth, SubscriptionType subscriptionType, String swimmerType) {
         this.memberName = memberName;
@@ -42,14 +41,20 @@ public class Member {
 
         this.subscription = new Subscription(this.ageGroup, this.memberAge, this.subscriptionType);
 
-        this.paidSubscription = false; // Hvis subscription ikke er aktivt
+    }
+
+    public void setDataFromFileLine(String line) {
+        String[] string = line.split(",");
+        memberName = string[0];
+        memberAge = Integer.parseInt(string[1]);
+        subscriptionType = SubscriptionType.valueOf(string[2]);
+        ageGroup = AgeGroup.valueOf(string[3]);
+        swimmerType = string[4];
+        Subscription subscription = new Subscription();
+        this.subscription = subscription.setDataFromFileLine(pa);
 
     }
 
-
-    public void paidSubscription() {
-        this.paidSubscription = true;
-    }
 
     // Getters
     public String getMemberName() {

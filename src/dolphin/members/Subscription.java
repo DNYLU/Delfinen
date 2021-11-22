@@ -1,4 +1,5 @@
 package dolphin.members;
+
 // Lu & David
 public class Subscription {
     private final int seniorPrice = 1600;
@@ -7,6 +8,7 @@ public class Subscription {
     private final double seniorDiscountPrice = seniorPrice * 0.25;
 
     private double paymentAmount;
+    private double debt;
 
     public Subscription(AgeGroup ageGroup, int age, SubscriptionType subscriptionType) {
         if (subscriptionType == SubscriptionType.ACTIVE) {
@@ -19,10 +21,18 @@ public class Subscription {
                     this.paymentAmount = this.seniorPrice; // 25% rabat = 400
                 }
             }
-
         } else { // Hvis man har et passivt medlemskab
             this.paymentAmount = passivePrice; // 500 kr.
         }
+    }
+
+    public void setDataFromFileLine(String line) {
+        String[] string = line.split(":");
+        paymentAmount = Integer.parseInt(string[5]);
+        debt = Double.parseDouble(string[6]);
+    }
+
+    public Subscription() {
     }
 
     public double getPaymentAmount() {
