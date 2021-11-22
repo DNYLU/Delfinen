@@ -4,6 +4,13 @@ public enum SwimmerType {
     CASUAL("Motionist"),
     COMPETITIVE("Konkurrencesvømmer");
 
-    SwimmerType(String type) {
+    private final String name;
+
+    SwimmerType(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return this.name;
     }
 }
