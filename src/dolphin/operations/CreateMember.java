@@ -1,10 +1,10 @@
 package dolphin.operations;
 
-import dolphin.members.Discipline;
+import  dolphin.members.Discipline;
 import dolphin.members.Member;
+import dolphin.members.SubscriptionType;
 import dolphin.util.MSG;
 import dolphin.util.UserInput;
-
 import java.util.ArrayList;
 
 // Lu & David
@@ -26,7 +26,7 @@ public class CreateMember {
         //dolphin.members.Member info
         String memberName;
         int memberYearOfBirth;
-        String subscriptionType;
+        SubscriptionType subscriptionType;
         String swimmerType;
         String discipline;
 
@@ -50,10 +50,10 @@ public class CreateMember {
             int choice = userInput.getIntInput();
 
             if (choice == 1) {
-                subscriptionType = "Aktiv";
+                subscriptionType = SubscriptionType.ACTIVE;
                 break; // Find en bedre løsning
             } else if (choice == 2) {
-                subscriptionType = "Passiv";
+                subscriptionType = SubscriptionType.PASSIVE;
                 break;
             } else {
                 msg.errorMessageInt();
@@ -69,8 +69,8 @@ public class CreateMember {
 
             if (choice == 1) {
                 swimmerType = "Motionist";
-                Member member = new Member(subscriptionType, swimmerType);
-
+                Member member = new Member(memberName, memberYearOfBirth, subscriptionType, swimmerType);
+                casualMembers.add(member);
 
                 break; // Find en bedre løsning
             } else if (choice == 2) {
@@ -82,6 +82,7 @@ public class CreateMember {
         }
         if (swimmerType.equals("Konkurrencesvømmer")) {
             chooseDiscipline();
+
         }
 
     }
@@ -92,11 +93,11 @@ public class CreateMember {
                 Discipline.BUTTERFLY.getName() +
                 "\n2. " + Discipline.CRAWL.getName() +
                 "\n3. " + Discipline.RYGCRAWL.getName() +
-                "\n4. " + Discipline.BRYSTSVØMNING.getName()
-        );
+                "\n4. " + Discipline.BRYSTSVØMNING.getName() +
+                "\n5. FÆRDIG");
 
-
-        while (true) {
+        boolean addingDiciplines = true;
+        while (addingDiciplines) {
             int choice = userInput.getIntInput();
 
             if (choice == 1) {
@@ -107,11 +108,16 @@ public class CreateMember {
                 disciplineChoice = Discipline.RYGCRAWL;
             } else if (choice == 4) {
                 disciplineChoice = Discipline.BRYSTSVØMNING;
+            } else if (choice == 5) {
+                addingDiciplines = false;
             } else {
                 msg.errorMessageInt();
             }
         }
+        return
     }
+
+
 
     // Check om man får et forkert input
     private String nameCheck(String input) {
@@ -135,7 +141,4 @@ public class CreateMember {
         }
         return name;
     }
-
-
-
 }
