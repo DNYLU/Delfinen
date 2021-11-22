@@ -1,8 +1,25 @@
+package dolphin;
+import dolphin.operations.CreateMember;
+
 public class Dolphin {
     public static void main(String[] args) {
         Dolphin dolphin = new Dolphin();
         dolphin.run();
+
     }
+
+    /*
+     TODO:
+        Formand:
+        - Opret nyt medlem
+        - Vis alle medlemmer
+        Kassereren:
+        - Vis forventet kontingent
+        - Vis medlemmer i restance
+        Svømmetræner:
+        - Registrering af stævne, placering og tid
+        - Oversigt over klubbens top 5 svømmere inden for HVER disciplin
+        */
 
     private void run() {
         String[] menuItems = new String[10];
@@ -14,30 +31,33 @@ public class Dolphin {
 
         menu.printMenu();
 
-        int choice = menu.readChoice();
-        boolean checkChoice;
+        boolean checkChoice = true;
 
         do {
+            int choice = menu.readChoice();
             switch (choice) {
                 case 1:
                     System.out.println("Opretter nyt medlem");
-                    checkChoice = true; // Metode der opretter nyt medlem i stedet for
+                    CreateMember createMember = new CreateMember();
+                    createMember.run();
+                    break;
+
+                    // Metode der opretter nyt medlem i stedet for
                 case 2:
                     System.out.println("noget");
-                    checkChoice = true;
+                    break;
 
                 case 9:
                     System.out.println("Slutter programmet");
-                    checkChoice = true;
+                    checkChoice = false;
                     break;
 
                 default: //Hvis input er "forkert"
                     System.out.println("Lorte input");
                     menu.printMenu();
-                    choice = menu.readChoice(); // Så metoden kører igen
                     checkChoice = false;
             }
         }
-        while (!checkChoice); // Loop der kører, så længe den er false
+        while (checkChoice); // Loop der kører, så længe den er false
     }
 }
