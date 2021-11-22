@@ -3,6 +3,7 @@ package dolphin.operations;
 import dolphin.members.CompetitiveMember;
 import  dolphin.members.Discipline;
 import dolphin.members.Member;
+import dolphin.members.Subscription;
 import dolphin.members.SubscriptionType;
 import dolphin.util.MSG;
 import dolphin.util.UserInput;
@@ -46,8 +47,8 @@ public class CreateMember {
             System.out.println("Vælg medlemstype: "); // Aktiv eller passiv
 
             //Bedøm om jeg skal lave en switch her eller if statement
-            System.out.println("1. Aktiv");
-            System.out.println("2. Passiv");
+            System.out.println("1. " + SubscriptionType.ACTIVE.getName());
+            System.out.println("2. " + SubscriptionType.PASSIVE.getName());
 
             int choice = userInput.getIntInput();
 
