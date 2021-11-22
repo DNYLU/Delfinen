@@ -1,11 +1,18 @@
 package dolphin.operations;
 
 import dolphin.members.Discipline;
+import dolphin.members.Member;
 import dolphin.util.MSG;
 import dolphin.util.UserInput;
 
+import java.util.ArrayList;
+
 // Lu & David
 public class CreateMember {
+    public ArrayList<Member> allMembers = new ArrayList<>(); //TEST 1
+    public ArrayList<Member> casualMembers = new ArrayList<>(); //TEST 1
+    public ArrayList<Member> competitiveMembers = new ArrayList<>(); //TEST 1
+
     UserInput userInput = new UserInput();
     MSG msg = new MSG();
     Discipline discipline;
@@ -62,6 +69,9 @@ public class CreateMember {
 
             if (choice == 1) {
                 swimmerType = "Motionist";
+                Member member = new Member(subscriptionType, swimmerType);
+
+
                 break; // Find en bedre løsning
             } else if (choice == 2) {
                 swimmerType = "Konkurrencesvømmer";

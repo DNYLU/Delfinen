@@ -46,6 +46,7 @@ public class Member {
 
     }
 
+
     public void paidSubscription() {
         this.paidSubscription = true;
     }

@@ -1,5 +1,6 @@
 package dolphin.operations;
 import dolphin.util.UserInput;
+import java.util.ArrayList;
 
 public class Registration {
   UserInput userInput = new UserInput();
@@ -14,8 +15,7 @@ public class Registration {
     System.out.println("Indtast svømmerens tid: ");
     lapTime = userInput.getDoubleInput();
     System.out.println(lapTime);
-
-
-
   }
+
+
 }
