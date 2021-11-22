@@ -4,6 +4,13 @@ public enum SubscriptionType {
   ACTIVE("Aktiv"),
   PASSIVE("Passiv");
 
-  SubscriptionType(String type) {
+  private final String name;
+
+  SubscriptionType(String name) {
+    this.name = name;
+  }
+
+  public String getName() {
+    return this.name;
   }
 }
