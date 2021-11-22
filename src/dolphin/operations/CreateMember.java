@@ -11,7 +11,7 @@ import java.util.HashSet;
 public class CreateMember {
     public ArrayList<Member> allMembers = new ArrayList<>(); //TEST 1
     public ArrayList<Member> casualMembers = new ArrayList<>(); //TEST 1
-    public ArrayList<Member> competitiveMembers = new ArrayList<>(); //TEST 1
+    public ArrayList<CompetitiveMember> competitiveMembers = new ArrayList<>(); //TEST 1
 
     UserInput userInput = new UserInput();
     MSG msg = new MSG();
@@ -146,13 +146,18 @@ public class CreateMember {
         return name;
     }
 
-    public void addToCasualFile(Member member) {
+    public void addToCasualFile() {
         FileManager fileManager = new FileManager("casualFile.csv");
-        fileManager.writeLineToCsv(casualMembers);
+        for (Member member : this.casualMembers) {
+            fileManager.writeLineToCsv(member.toFileString());
+        }
     }
 
-    public void addToCompetitiveFile(CompetitiveMember competitiveMember) {
-
+    public void addToCompetitiveFile() {
+        FileManager fileManager = new FileManager("competitiveFile.csv");
+        for (CompetitiveMember competitiveMember : this.competitiveMembers) {
+            fileManager.writeLineToCsv(competitiveMember.toFileString());
+        }
     }
 
 }

@@ -45,14 +45,26 @@ public class Member {
 
     public void setDataFromFileLine(String line) {
         String[] string = line.split(",");
-        memberName = string[0];
-        memberAge = Integer.parseInt(string[1]);
-        subscriptionType = SubscriptionType.valueOf(string[2]);
-        ageGroup = AgeGroup.valueOf(string[3]);
-        swimmerType = string[4];
-        Subscription subscription = new Subscription();
-        this.subscription = subscription.setDataFromFileLine(pa);
 
+        this.memberName = string[0];
+        this.memberAge = Integer.parseInt(string[1]);
+        this.subscriptionType = SubscriptionType.valueOf(string[2]);
+        this.ageGroup = AgeGroup.valueOf(string[3]);
+        this.swimmerType = string[4];
+
+        Subscription subscription = new Subscription();
+        subscription.setDataFromFileLine(string[5]);
+        this.subscription = subscription;
+    }
+
+    public String toFileString() {
+
+        return this.memberName + "," +
+                this.memberAge + "," +
+                this.subscription + "," +
+                this.ageGroup + "," +
+                this.swimmerType + "," +
+                this.subscription.toFileString();
     }
 
 

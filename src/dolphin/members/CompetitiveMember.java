@@ -13,4 +13,27 @@ public class CompetitiveMember extends Member {
 
     }
 
+    public void setDataFromFileLine(String line) {
+        super.setDataFromFileLine(line);
+        String[] string = line.split(",");
+        String[] string1 = string[6].split(":");
+
+        for (String discipline : string1) {
+            this.disciplines.add(Discipline.valueOf(discipline));
+        }
+
+    }
+
+    public String toFileString() {
+        String fileString = super.toFileString() + ",";
+        ArrayList<String> disciplinesString = new ArrayList<>();
+
+        for (Discipline discipline : this.disciplines) {
+            disciplinesString.add(discipline.getName());
+        }
+
+        fileString += String.join(":", disciplinesString);
+        return fileString;
+    }
+
 }

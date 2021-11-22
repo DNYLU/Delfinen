@@ -10,6 +10,9 @@ public class Subscription {
     private double paymentAmount;
     private double debt;
 
+    public Subscription() {
+    }
+
     public Subscription(AgeGroup ageGroup, int age, SubscriptionType subscriptionType) {
         if (subscriptionType == SubscriptionType.ACTIVE) {
             if (ageGroup == AgeGroup.JUNIOR) { // Hvis man er under 18 år, koster det 1000 kr.
@@ -27,12 +30,15 @@ public class Subscription {
     }
 
     public void setDataFromFileLine(String line) {
-        String[] string = line.split(":");
-        paymentAmount = Integer.parseInt(string[5]);
-        debt = Double.parseDouble(string[6]);
+        String[] string = line.split(":"); // [1600, 0]
+        paymentAmount = Integer.parseInt(string[0]);
+        debt = Double.parseDouble(string[1]);
     }
 
-    public Subscription() {
+    public String toFileString() {
+
+        return paymentAmount + ":" +
+                debt + ":";
     }
 
     public double getPaymentAmount() {
