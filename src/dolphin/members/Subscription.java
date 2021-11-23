@@ -1,6 +1,9 @@
 package dolphin.members;
 
-// Lu & David
+/**
+ * @author David
+ * @author Danny Lu
+ */
 public class Subscription {
     private final int seniorPrice = 1600;
     private final int juniorPrice = 1000;
@@ -8,7 +11,7 @@ public class Subscription {
     private final double seniorDiscountPrice = seniorPrice * 0.25;
 
     private double paymentAmount;
-    private double debt;
+    private double debtAmount;
 
     public Subscription() {
     }
@@ -32,12 +35,12 @@ public class Subscription {
     public void setDataFromFileLine(String line) {
         String[] string = line.split(":"); // [1600, 0]
         paymentAmount = Integer.parseInt(string[0]);
-        debt = Double.parseDouble(string[1]);
+        debtAmount = Double.parseDouble(string[1]);
     }
 
     public String toFileString() {
 
-        return paymentAmount + ":" + debt;
+        return paymentAmount + ":" + debtAmount;
     }
 
     public double getPaymentAmount() {

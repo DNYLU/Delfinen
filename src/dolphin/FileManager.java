@@ -9,7 +9,10 @@ import java.io.IOException;
 import java.util.Scanner;
 import java.util.ArrayList;
 
-//David
+/**
+ * used to write and read members from a specified file
+ * @author David
+ */
 public class FileManager {
     private String path;
 
@@ -17,6 +20,11 @@ public class FileManager {
         this.path = path;
     }
 
+    /**
+     * @param source the string that will be written to a file, each white space will be replaced by a comma
+     * @param append a boolean value that determines if the source should be added to the file or overwrite the file
+     * @return a boolean, true if the file was created and false if not
+     */
     private boolean writeToCsv(String source, boolean append) {
         File file = new File(this.path);
         FileWriter fileWriter;
@@ -35,14 +43,25 @@ public class FileManager {
         return true;
     }
 
+    /**
+     * @param source the string that will be written to a file, each white space will be replaced by a comma
+     * @return a boolean, true if the file was created and false if not
+     */
     public boolean writeLineToCsv(String source) {
         return this.writeToCsv(source, true);
     }
 
-    public boolean overWriteFile(String source) {
+    /**
+     * @param source the string that will be written to a file, each white space will be replaced by a comma
+     * @return a boolean, true if the file was created and false if not
+     */
+    public boolean overwriteFile(String source) {
         return this.writeToCsv(source, false);
     }
 
+    /**
+     * @return all the members from the file, each member is represented as a string array inside an ArrayList
+     */
     public ArrayList<String[]> readMembersFromCsv() {
         File file = new File(this.path);
         Scanner scanner;

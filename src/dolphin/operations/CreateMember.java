@@ -92,17 +92,17 @@ public class CreateMember {
 
     private ArrayList<Discipline> chooseDiscipline() {
         Discipline disciplineChoice;
-        System.out.println("Vælg disciplin:" +
-                "\n1. " + Discipline.BUTTERFLY.getName() +
-                "\n2. " + Discipline.CRAWL.getName() +
-                "\n3. " + Discipline.RYGCRAWL.getName() +
-                "\n4. " + Discipline.BRYSTSVØMNING.getName() +
-                "\n5. FÆRDIG");
 
         HashSet<Discipline> disciplines = new HashSet<>(); // Der kan ikke være duplicates af disciplin-værdierne
 
         boolean addingDiciplines = true;
         while (addingDiciplines) {
+            System.out.println("Vælg disciplin:" +
+                    "\n1. " + Discipline.BUTTERFLY.getName() +
+                    "\n2. " + Discipline.CRAWL.getName() +
+                    "\n3. " + Discipline.RYGCRAWL.getName() +
+                    "\n4. " + Discipline.BRYSTSVØMNING.getName() +
+                    "\n5. FÆRDIG");
             int choice = userInput.getIntInput();
 
             if (choice == 1) {

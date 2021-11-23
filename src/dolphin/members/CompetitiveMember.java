@@ -1,8 +1,10 @@
 package dolphin.members;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 
+/**
+ * @author David
+ */
 public class CompetitiveMember extends Member {
 
     private ArrayList<Discipline> disciplines;
