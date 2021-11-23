@@ -26,7 +26,7 @@ public class CreateMember {
         //dolphin.members.Member info
         String memberName;
         int memberYearOfBirth;
-        SubscriptionType subscriptionType;
+        SubscriptionType subscriptionType = null;
         String swimmerType;
         String discipline;
 
@@ -52,10 +52,12 @@ public class CreateMember {
             int choice = userInput.getIntInput();
             if (choice == 1) {
                 subscriptionType = SubscriptionType.ACTIVE;
-                break; // Find en bedre løsning
+
+                addingSubscriptionType = false;
             } else if (choice == 2) {
                 subscriptionType = SubscriptionType.PASSIVE;
-                break;
+
+                addingSubscriptionType = false;
             } else {
                 msg.errorMessageInt();
             }

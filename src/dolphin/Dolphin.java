@@ -33,11 +33,11 @@ public class Dolphin {
 
         menuItems[9] = "9. QUIT"; // Kald det noget andet
 
-        menu.printMenu();
 
         boolean checkChoice = true;
 
         do {
+            menu.printMenu();
             int choice = menu.readChoice();
             switch (choice) {
                 case 1:
