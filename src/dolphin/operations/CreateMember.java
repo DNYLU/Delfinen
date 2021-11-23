@@ -40,15 +40,16 @@ public class CreateMember {
         // Aktivitetsform loops
 
         // subscriptionType
-        while (true) { // Skift while true om lidt til noget bedre
+        boolean addingSubscriptionType = true;
+        while (addingSubscriptionType) { // Skift while true om lidt til noget bedre
             System.out.println("Vælg medlemstype: "); // Aktiv eller passiv
+
 
             //Bedøm om jeg skal lave en switch her eller if statement
             System.out.println("1. " + SubscriptionType.ACTIVE.getName());
             System.out.println("2. " + SubscriptionType.PASSIVE.getName());
 
             int choice = userInput.getIntInput();
-
             if (choice == 1) {
                 subscriptionType = SubscriptionType.ACTIVE;
                 break; // Find en bedre løsning
@@ -61,31 +62,29 @@ public class CreateMember {
         }
 
         //swimmerType
-        while (true) {
+        boolean addingSwimmerType = true;
+        while (addingSwimmerType) {
             System.out.println("1. " + SwimmerType.CASUAL.getName());
             System.out.println("2. " + SwimmerType.COMPETITIVE.getName());
 
             int choice = userInput.getIntInput();
-
             if (choice == 1) {
                 swimmerType = SwimmerType.CASUAL.getName();
                 Member member = new Member(memberName, memberYearOfBirth, subscriptionType, swimmerType);
                 casualMembers.add(member);
                 this.addToCasualFile();
 
-                break; // Find en bedre løsning
+                addingSwimmerType = false;
             } else if (choice == 2) {
                 swimmerType = SwimmerType.COMPETITIVE.getName();
-                break;
+                ArrayList<Discipline> disciplines = chooseDiscipline();
+                CompetitiveMember member = new CompetitiveMember(memberName, memberYearOfBirth, subscriptionType, swimmerType, disciplines);
+                this.competitiveMembers.add(member);
+                this.addToCompetitiveFile();
+                addingSwimmerType = false;
             } else {
                 msg.errorMessageInt();
             }
-        }
-        if (swimmerType.equals(SwimmerType.COMPETITIVE.getName())) {
-            ArrayList<Discipline> disciplines = chooseDiscipline();
-            CompetitiveMember member = new CompetitiveMember(memberName, memberYearOfBirth, subscriptionType, swimmerType, disciplines);
-            this.competitiveMembers.add(member);
-            this.addToCompetitiveFile();
         }
     }
 
