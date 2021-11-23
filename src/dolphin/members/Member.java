@@ -60,8 +60,7 @@ public class Member {
     public String toFileString() {
 
         return this.memberName + "," +
-                this.memberAge + "," +
-                this.subscription + "," +
+                this.memberYearOfBirth + "," +
                 this.ageGroup + "," +
                 this.swimmerType + "," +
                 this.subscription.toFileString();

@@ -68,28 +68,31 @@ public class CreateMember {
             int choice = userInput.getIntInput();
 
             if (choice == 1) {
-                swimmerType = "Motionist";
+                swimmerType = SwimmerType.CASUAL.getName();
                 Member member = new Member(memberName, memberYearOfBirth, subscriptionType, swimmerType);
                 casualMembers.add(member);
+                this.addToCasualFile();
 
                 break; // Find en bedre løsning
             } else if (choice == 2) {
-                swimmerType = "Konkurrencesvømmer";
+                swimmerType = SwimmerType.COMPETITIVE.getName();
                 break;
             } else {
                 msg.errorMessageInt();
             }
         }
-        if (swimmerType.equals("Konkurrencesvømmer")) {
+        if (swimmerType.equals(SwimmerType.COMPETITIVE.getName())) {
             ArrayList<Discipline> disciplines = chooseDiscipline();
             CompetitiveMember member = new CompetitiveMember(memberName, memberYearOfBirth, subscriptionType, swimmerType, disciplines);
+            this.competitiveMembers.add(member);
+            this.addToCompetitiveFile();
         }
     }
 
     private ArrayList<Discipline> chooseDiscipline() {
         Discipline disciplineChoice;
-        System.out.println("Vælg disciplin:\n1. " +
-                Discipline.BUTTERFLY.getName() +
+        System.out.println("Vælg disciplin:" +
+                "\n1. " + Discipline.BUTTERFLY.getName() +
                 "\n2. " + Discipline.CRAWL.getName() +
                 "\n3. " + Discipline.RYGCRAWL.getName() +
                 "\n4. " + Discipline.BRYSTSVØMNING.getName() +
@@ -103,20 +106,20 @@ public class CreateMember {
 
             if (choice == 1) {
                 disciplines.add(Discipline.BUTTERFLY);
-                System.out.println("Butterfly er blevet tilføjet");
+                System.out.println(Discipline.BUTTERFLY.getName() + " er blevet tilføjet");
             } else if (choice == 2) {
                 disciplines.add(Discipline.CRAWL);
-                System.out.println("Crawl er blevet tilføjet");
+                System.out.println(Discipline.CRAWL.getName() + " er blevet tilføjet");
             } else if (choice == 3) {
                 disciplines.add(Discipline.RYGCRAWL);
-                System.out.println("Rygcrawl er blevet tilføjet");
+                System.out.println(Discipline.RYGCRAWL.getName() + " er blevet tilføjet");
             } else if (choice == 4) {
                 disciplines.add(Discipline.BRYSTSVØMNING);
-                System.out.println("Brystsvømning er blevet tilføjet");
+                System.out.println(Discipline.BRYSTSVØMNING.getName() + " er blevet tilføjet");
             } else if (choice == 5) {
                 addingDiciplines = false;
                 System.out.println("Tilføjet disciplin(er): " + disciplines);
-            } else if (choice < 1 || choice > 5) {
+            } else {
                 msg.errorMessageInt();
             }
         }

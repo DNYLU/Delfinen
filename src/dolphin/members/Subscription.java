@@ -37,8 +37,7 @@ public class Subscription {
 
     public String toFileString() {
 
-        return paymentAmount + ":" +
-                debt + ":";
+        return paymentAmount + ":" + debt;
     }
 
     public double getPaymentAmount() {
