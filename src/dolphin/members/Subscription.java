@@ -46,4 +46,8 @@ public class Subscription {
     public double getPaymentAmount() {
         return this.paymentAmount;
     }
+
+    public double getDebtAmount() {
+        return this.debtAmount;
+    }
 }

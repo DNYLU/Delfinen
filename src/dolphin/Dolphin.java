@@ -1,5 +1,6 @@
 package dolphin;
 import dolphin.operations.CreateMember;
+import dolphin.operations.DebtMembers;
 
 public class Dolphin {
     public static void main(String[] args) {
@@ -28,8 +29,8 @@ public class Dolphin {
     private void run() {
         String[] menuItems = new String[10];
         Menu menu = new Menu("MENU", "Choose option", menuItems);
-        menuItems[1] = "1. Opret nyt medlem";
-        menuItems[2] = "2. et eller andet";
+        menuItems[1] = "1. Opret nyt medlem.";
+        menuItems[2] = "2. Vis medlemmer i restance.";
 
         menuItems[9] = "9. QUIT"; // Kald det noget andet
 
@@ -48,7 +49,8 @@ public class Dolphin {
 
                     // Metode der opretter nyt medlem i stedet for
                 case 2:
-                    System.out.println("noget");
+                    DebtMembers debtMembers = new DebtMembers();
+                    debtMembers.debtMembers();
                     break;
 
                 case 9:

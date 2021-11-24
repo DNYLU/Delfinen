@@ -9,7 +9,7 @@ public class Member {
 
     //Personal info
     private String memberName;
-    private final int memberYearOfBirth;
+    private int memberYearOfBirth;
     private int memberAge;
 
     // Jeg har lige lavet et par ændringer, så det måske passer bedre til det jeg skal lave -Lu
@@ -21,6 +21,10 @@ public class Member {
 
     // Payment info
     private Subscription subscription;
+
+    public Member() {
+
+    }
 
     public Member(String memberName, int memberYearOfBirth, SubscriptionType subscriptionType, String swimmerType) {
         this.memberName = memberName;
@@ -91,4 +95,6 @@ public class Member {
     public double getPaymentAmount() {
         return this.subscription.getPaymentAmount();
     }
+
+    public double getDebtAmount() { return this.subscription.getDebtAmount(); }
 }
