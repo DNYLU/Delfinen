@@ -9,20 +9,20 @@ import java.util.ArrayList;
 public class DebtMembers {
 
   public void debtMembers() {
-    FileManager fileManager = new FileManager("CasualMembers.csv");
-    FileManager fileManager1 = new FileManager("CompetitiveMembers.csv");
+    FileManager fileManager = new FileManager("casualFile.csv");
+    FileManager fileManager1 = new FileManager("competitiveFile.csv");
     ArrayList<String[]> casualMembers = new ArrayList<>(fileManager.readMembersFromCsv());
     ArrayList<String[]> competitiveMembers = new ArrayList<>(fileManager1.readMembersFromCsv());
     ArrayList<Member> debtMembers = new ArrayList<>();
 
     for (String[] casualMember : casualMembers) {
       Member member = new Member();
-      member.setDataFromFileLine(String.join(" ", casualMember));
+      member.setDataFromFileLine(String.join(",", casualMember));
       debtMembers.add(member);
     }
     for (String[] competitiveMember : competitiveMembers) {
       CompetitiveMember member = new CompetitiveMember();
-      member.setDataFromFileLine(String.join(" ", competitiveMember));
+      member.setDataFromFileLine(String.join(",", competitiveMember));
       debtMembers.add(member);
     }
     for (int i = debtMembers.size() - 1; i >= 0; i--) {  // Den tæller baglæns fra max -> 0

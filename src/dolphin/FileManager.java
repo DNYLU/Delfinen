@@ -1,5 +1,6 @@
 package dolphin;
 
+import java.awt.*;
 import java.io.File;
 import java.io.FileWriter;
 
@@ -77,7 +78,6 @@ public class FileManager {
         while (scanner.hasNextLine()) {
             members.add(scanner.nextLine().split(","));
         }
-
         return members;
     }
 }
