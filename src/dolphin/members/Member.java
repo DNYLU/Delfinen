@@ -97,5 +97,8 @@ public class Member {
         return this.subscription.getPaymentAmount();
     }
 
-    public double getDebtAmount() { return this.subscription.getDebtAmount(); }
+    public double getDebtAmount() {
+        return this.subscription.getDebtAmount();
+    }
+
 }

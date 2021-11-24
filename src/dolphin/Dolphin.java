@@ -1,6 +1,8 @@
 package dolphin;
+import dolphin.operations.AllMembers;
 import dolphin.operations.CreateMember;
 import dolphin.operations.DebtMembers;
+//import dolphin.operations.PassiveMembers;
 
 public class Dolphin {
     public static void main(String[] args) {
@@ -13,7 +15,7 @@ public class Dolphin {
      TODO:
         Formand:
         - Opret nyt medlem
-        - Vis alle medlemmer
+        - Vis alle medlemmer. Dannie
         Kassereren:
         - Vis forventet kontingent
         - Vis medlemmer i restance
@@ -30,7 +32,8 @@ public class Dolphin {
         String[] menuItems = new String[10];
         Menu menu = new Menu("MENU", "-----HOVEDMENU-----", menuItems);
         menuItems[1] = "1. Opret nyt medlem.";
-        menuItems[2] = "2. Vis medlemmer i restance.";
+        menuItems[2] = "2. Medlemmer af Delfinen.";
+        menuItems[3] = "3. Vis medlemmer i restance.";
 
         menuItems[9] = "9. QUIT"; // Kald det noget andet
 
@@ -47,11 +50,21 @@ public class Dolphin {
                     createMember.run();
                     break;
 
-                    // Metode der opretter nyt medlem i stedet for
                 case 2:
+                    System.out.println("Vælg et emne: ");
+                    AllMembers allMembers = new AllMembers();
+                    //PassiveMembers passiveMembers = new PassiveMembers();
+                    //DebtMembers debtMembers = new DebtMembers();
+                    allMembers.allMembers();
+                    //passiveMembers.passiveMembers();
+                    //debtMembers.debtMembers();
+
+                    break;
+
+                    // Metode der opretter nyt medlem i stedet for
+               case 3:
                     DebtMembers debtMembers = new DebtMembers();
                     debtMembers.debtMembers();
-
                     break;
 
                 case 9:

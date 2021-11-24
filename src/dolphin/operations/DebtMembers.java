@@ -37,7 +37,6 @@ public class DebtMembers {
       if (debtMembers.get(i).getDebtAmount() == 0) {
         debtMembers.remove(i);
       }
-
     }
     for (Member member : debtMembers) {
       System.out.println(member.getMemberName() + ": " + member.getDebtAmount());
