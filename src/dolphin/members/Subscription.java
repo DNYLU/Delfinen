@@ -34,7 +34,7 @@ public class Subscription {
 
     public void setDataFromFileLine(String line) {
         String[] string = line.split(":"); // [1600, 0]
-        paymentAmount = Integer.parseInt(string[0]);
+        paymentAmount = Double.parseDouble(string[0]);
         debtAmount = Double.parseDouble(string[1]);
     }
 

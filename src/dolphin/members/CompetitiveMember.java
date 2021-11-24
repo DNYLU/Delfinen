@@ -20,11 +20,12 @@ public class CompetitiveMember extends Member {
     }
 
     public void setDataFromFileLine(String line) {
+        this.disciplines = new ArrayList<>();
         super.setDataFromFileLine(line);
-        String[] string = line.split(",");
-        String[] string1 = string[6].split(":");
+        String[] memberInfo = line.split(",");
+        String[] disciplines = memberInfo[6].split(":");
 
-        for (String discipline : string1) {
+        for (String discipline : disciplines) {
             this.disciplines.add(Discipline.valueOf(discipline));
         }
 
@@ -35,7 +36,7 @@ public class CompetitiveMember extends Member {
         ArrayList<String> disciplinesString = new ArrayList<>();
 
         for (Discipline discipline : this.disciplines) {
-            disciplinesString.add(discipline.getName());
+            disciplinesString.add(discipline.toString());
         }
 
         fileString += String.join(":", disciplinesString);

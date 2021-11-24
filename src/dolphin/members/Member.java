@@ -51,9 +51,9 @@ public class Member {
         String[] string = line.split(",");
 
         this.memberName = string[0];
-        this.memberAge = Integer.parseInt(string[1]);
-        this.subscriptionType = SubscriptionType.valueOf(string[2]);
-        this.ageGroup = AgeGroup.valueOf(string[3]);
+        this.memberYearOfBirth = Integer.parseInt(string[1]);
+        this.ageGroup = AgeGroup.valueOf(string[2]);
+        this.subscriptionType = SubscriptionType.valueOf(string[3]);
         this.swimmerType = string[4];
 
         Subscription subscription = new Subscription();
