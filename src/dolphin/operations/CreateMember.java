@@ -102,24 +102,24 @@ public class CreateMember {
                     "\n2. " + Discipline.CRAWL.getName() +
                     "\n3. " + Discipline.RYGCRAWL.getName() +
                     "\n4. " + Discipline.BRYSTSVØMNING.getName() +
-                    "\n5. FÆRDIG");
+                    "\n\n9. FÆRDIG");
             int choice = userInput.getIntInput();
 
             if (choice == 1) {
                 disciplines.add(Discipline.BUTTERFLY);
-                System.out.println(Discipline.BUTTERFLY.getName() + " er blevet tilføjet");
+                System.out.println(Discipline.BUTTERFLY.getName() + " er blevet tilføjet\n");
             } else if (choice == 2) {
                 disciplines.add(Discipline.CRAWL);
-                System.out.println(Discipline.CRAWL.getName() + " er blevet tilføjet");
+                System.out.println(Discipline.CRAWL.getName() + " er blevet tilføjet\n");
             } else if (choice == 3) {
                 disciplines.add(Discipline.RYGCRAWL);
-                System.out.println(Discipline.RYGCRAWL.getName() + " er blevet tilføjet");
+                System.out.println(Discipline.RYGCRAWL.getName() + " er blevet tilføjet\n");
             } else if (choice == 4) {
                 disciplines.add(Discipline.BRYSTSVØMNING);
-                System.out.println(Discipline.BRYSTSVØMNING.getName() + " er blevet tilføjet");
-            } else if (choice == 5) {
+                System.out.println(Discipline.BRYSTSVØMNING.getName() + " er blevet tilføjet\n");
+            } else if (choice == 9) {
                 addingDiciplines = false;
-                System.out.println("Tilføjet disciplin(er): " + disciplines);
+                System.out.println("Tilføjet disciplin(er): " + disciplines + "\n");
             } else {
                 msg.errorMessageInt();
             }

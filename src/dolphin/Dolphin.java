@@ -28,7 +28,7 @@ public class Dolphin {
 
     private void run() {
         String[] menuItems = new String[10];
-        Menu menu = new Menu("MENU", "Hovedmenu", menuItems);
+        Menu menu = new Menu("MENU", "-----HOVEDMENU-----", menuItems);
         menuItems[1] = "1. Opret nyt medlem.";
         menuItems[2] = "2. Vis medlemmer i restance.";
 
