@@ -8,7 +8,7 @@ public class Subscription {
     private final int seniorPrice = 1600;
     private final int juniorPrice = 1000;
     private final int passivePrice = 500;
-    private final double seniorDiscountPrice = seniorPrice * 0.25;
+    private final double seniorDiscountPrice = seniorPrice - (seniorPrice * 0.25);
 
     private double paymentAmount;
     private double debtAmount;
