@@ -66,6 +66,7 @@ public class Member {
         return this.memberName + "," +
                 this.memberYearOfBirth + "," +
                 this.ageGroup + "," +
+                this.subscriptionType + "," +
                 this.swimmerType + "," +
                 this.subscription.toFileString();
     }
