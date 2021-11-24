@@ -34,7 +34,7 @@ public class FileManager {
             //joins an array that is split with " " together with an ","
             String toFile = String.join(",", source.split("\s+"));
 
-            fileWriter.write(toFile);
+            fileWriter.write(toFile + "\n");
             //The fileWriter instance has to close() after having write() for it to actually write to a file
             fileWriter.close();
         } catch (IOException e) {
