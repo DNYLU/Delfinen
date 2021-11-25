@@ -60,7 +60,6 @@ public class FileApi {
                 allMembers.add(member);
             }
         }
-
         return allMembers;
     }
 

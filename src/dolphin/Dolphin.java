@@ -1,4 +1,5 @@
 package dolphin;
+import dolphin.members.Contingent;
 import dolphin.operations.AllMembers;
 import dolphin.operations.CreateMember;
 import dolphin.operations.DebtMembers;
@@ -17,7 +18,7 @@ public class Dolphin {
         - Opret nyt medlem
         - Vis alle medlemmer. Dannie
         Kassereren:
-        - Vis forventet kontingent
+        - Vis forventet kontingent. dannie // file api har en modtode som henter alle medlemmere og retur dem.
         - Vis medlemmer i restance
         Svømmetræner:
         - Registrering af stævne, placering og tid
@@ -34,6 +35,7 @@ public class Dolphin {
         menuItems[1] = "1. Opret nyt medlem.";
         menuItems[2] = "2. Medlemmer af Delfinen.";
         menuItems[3] = "3. Vis medlemmer i restance.";
+        menuItems[4] = "4. Vis forventet kontigent.";
 
         menuItems[9] = "9. QUIT"; // Kald det noget andet
 
@@ -65,6 +67,12 @@ public class Dolphin {
                case 3:
                     DebtMembers debtMembers = new DebtMembers();
                     debtMembers.debtMembers();
+                    break;
+
+                case 4:
+                    Contingent contingent = new Contingent(); // Her henter vi hele det samlede kontigent beløb.
+                    contingent.totalContingent();
+                    System.out.println(contingent);
                     break;
 
                 case 9:

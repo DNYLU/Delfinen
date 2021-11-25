@@ -7,7 +7,6 @@ import java.util.ArrayList;
 
 public class AllMembers {
 
-
   public void allMembers() {
     FileApi fileApi = new FileApi();
     ArrayList<Member> allMembers = fileApi.getAllMembers();
