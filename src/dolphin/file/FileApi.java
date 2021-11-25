@@ -1,6 +1,7 @@
 package dolphin.file;
 
 import dolphin.members.CompetitiveMember;
+import dolphin.members.Discipline;
 import dolphin.members.Member;
 
 import java.util.ArrayList;
@@ -13,13 +14,27 @@ public class FileApi {
         this.writeMember(member, this.casualPath);
     }
 
-    public void writeCompetitiveMember(Member member) {
-        this.writeMember(member, this.competitivePath);
+    public void writeCompetitiveMember(CompetitiveMember competitiveMember) {
+        this.writeMember(competitiveMember, this.competitivePath);
+
+        FileManager fileManager = new FileManager(String.valueOf(competitiveMember.getId()));
+        fileManager.createFolder();
     }
 
     private void writeMember(Member member, String path) {
         FileManager fileManager = new FileManager(path);
         fileManager.writeLineToCsv(member.toFileString());
+    }
+
+    public void insertTrainingResult(CompetitiveMember competitiveMember, Discipline discipline, double time) {
+        FileManager fileManager = new FileManager(competitiveMember.getId() + "/trainingResults.csv");
+
+        fileManager.writeLineToCsv(discipline + " " + time);
+    }
+
+    public void insertCompetitionResult(CompetitiveMember competitiveMember, String competition, int placement, Discipline discipline, double time) {
+        FileManager fileManager = new FileManager(competitiveMember.getId() + "/competitionResults.csv");
+        fileManager.writeLineToCsv(competition + " " + placement + " " + discipline + " " + time);
     }
 
     public ArrayList<Member> getAllMembers() {

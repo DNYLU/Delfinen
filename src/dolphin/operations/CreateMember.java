@@ -160,7 +160,7 @@ public class CreateMember {
 
     public void addToCompetitiveFile() {
         FileApi fileApi = new FileApi();
-        for (Member member : this.competitiveMembers) {
+        for (CompetitiveMember member : this.competitiveMembers) {
             fileApi.writeCompetitiveMember(member);
         }
     }

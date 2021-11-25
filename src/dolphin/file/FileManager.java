@@ -80,4 +80,9 @@ public class FileManager {
         }
         return members;
     }
+
+    public boolean createFolder() {
+        File file = new File(this.path);
+        return file.mkdir();
+    }
 }
