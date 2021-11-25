@@ -1,6 +1,6 @@
 package dolphin.members;
 
-/**
+/*
  * @author David
  * @author Danny Lu
  */
@@ -39,7 +39,6 @@ public class Subscription {
     }
 
     public String toFileString() {
-
         return paymentAmount + ":" + debtAmount;
     }
 
