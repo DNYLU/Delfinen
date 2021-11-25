@@ -47,4 +47,18 @@ public class FileApi {
         }
         return allMembers;
     }
+
+    public Member findMember(int id) {
+        ArrayList<Member> members = this.getAllMembers();
+        Member member = null;
+        for (Member member1 : members) {
+            if (member1.getId() == id) {
+                member = member1;
+
+            }
+
+        }
+        return member;
+    }
+
 }

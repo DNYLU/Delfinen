@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 // Lu og Dannie
 public class Member {
-
+    private int id;
     //Personal info
     private String memberName;
     private int memberYearOfBirth;
@@ -26,11 +26,12 @@ public class Member {
 
     }
 
-    public Member(String memberName, int memberYearOfBirth, SubscriptionType subscriptionType, String swimmerType) {
+    public Member(String memberName, int memberYearOfBirth, SubscriptionType subscriptionType, String swimmerType, int id) {
         this.memberName = memberName;
         this.memberYearOfBirth = memberYearOfBirth;
         this.subscriptionType = subscriptionType;
         this.swimmerType = swimmerType;
+        this.id = id;
 
         //Henter det nuværende år
         int currentYear = new CurrentYear().getCurrentYear();
@@ -100,5 +101,6 @@ public class Member {
     public double getDebtAmount() {
         return this.subscription.getDebtAmount();
     }
+    public int getId() { return this.id; }
 
 }
