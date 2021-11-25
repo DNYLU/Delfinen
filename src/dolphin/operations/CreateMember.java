@@ -65,6 +65,7 @@ public class CreateMember {
 
         //swimmerType
         boolean addingSwimmerType = true;
+        int id = this.createId();
         while (addingSwimmerType) {
             System.out.println("1. " + SwimmerType.CASUAL.getName());
             System.out.println("2. " + SwimmerType.COMPETITIVE.getName());
@@ -72,7 +73,7 @@ public class CreateMember {
             int choice = userInput.getIntInput();
             if (choice == 1) {
                 swimmerType = SwimmerType.CASUAL.getName();
-                Member member = new Member(memberName, memberYearOfBirth, subscriptionType, swimmerType);
+                Member member = new Member(memberName, memberYearOfBirth, subscriptionType, swimmerType, id);
                 casualMembers.add(member);
                 this.addToCasualFile();
 
@@ -80,7 +81,7 @@ public class CreateMember {
             } else if (choice == 2) {
                 swimmerType = SwimmerType.COMPETITIVE.getName();
                 ArrayList<Discipline> disciplines = chooseDiscipline();
-                CompetitiveMember member = new CompetitiveMember(memberName, memberYearOfBirth, subscriptionType, swimmerType, disciplines);
+                CompetitiveMember member = new CompetitiveMember(memberName, memberYearOfBirth, subscriptionType, swimmerType, disciplines, id);
                 this.competitiveMembers.add(member);
                 this.addToCompetitiveFile();
                 addingSwimmerType = false;
@@ -164,4 +165,21 @@ public class CreateMember {
         }
     }
 
+
+    public int createId() {
+        FileApi fileApi = new FileApi();
+
+        int id = 0;
+        boolean createNewId = true;
+        while (createNewId) {
+            Member member = fileApi.findMember(id);
+            if (member == null)  {
+                createNewId = false;
+            } else {
+                id++;
+            }
+
+        }
+        return id;
+    }
 }

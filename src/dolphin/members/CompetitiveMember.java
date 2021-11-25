@@ -13,8 +13,8 @@ public class CompetitiveMember extends Member {
 
     }
 
-    public CompetitiveMember(String memberName, int memberYearOfBirth, SubscriptionType subscriptionType, String swimmerType, ArrayList<Discipline> discipline) {
-        super(memberName, memberYearOfBirth, subscriptionType, swimmerType);
+    public CompetitiveMember(String memberName, int memberYearOfBirth, SubscriptionType subscriptionType, String swimmerType, ArrayList<Discipline> discipline, int id) {
+        super(memberName, memberYearOfBirth, subscriptionType, swimmerType, id);
         this.disciplines = discipline;
 
     }
