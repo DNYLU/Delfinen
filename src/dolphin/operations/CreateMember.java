@@ -1,6 +1,6 @@
 package dolphin.operations;
 
-import dolphin.FileManager;
+import dolphin.file.FileApi;
 import dolphin.members.*;
 import dolphin.util.MSG;
 import dolphin.util.UserInput;
@@ -151,16 +151,16 @@ public class CreateMember {
     }
 
     public void addToCasualFile() {
-        FileManager fileManager = new FileManager("casualFile.csv");
+        FileApi fileApi = new FileApi();
         for (Member member : this.casualMembers) {
-            fileManager.writeLineToCsv(member.toFileString());
+            fileApi.writeCasualMember(member);
         }
     }
 
     public void addToCompetitiveFile() {
-        FileManager fileManager = new FileManager("competitiveFile.csv");
-        for (CompetitiveMember competitiveMember : this.competitiveMembers) {
-            fileManager.writeLineToCsv(competitiveMember.toFileString());
+        FileApi fileApi = new FileApi();
+        for (Member member : this.competitiveMembers) {
+            fileApi.writeCompetitiveMember(member);
         }
     }
 

@@ -1,4 +1,4 @@
-package dolphin;
+package dolphin.file;
 
 import java.awt.*;
 import java.io.File;
@@ -63,7 +63,7 @@ public class FileManager {
     /**
      * @return all the members from the file, each member is represented as a string array inside an ArrayList
      */
-    public ArrayList<String[]> readMembersFromCsv() {
+    public ArrayList<String[]> readLinesFromCsv() {
         File file = new File(this.path);
         Scanner scanner;
 

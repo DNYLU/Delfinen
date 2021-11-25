@@ -1,6 +1,6 @@
 /*package dolphin.operations;
 
-import dolphin.FileManager;
+import dolphin.file.FileManager;
 import dolphin.members.CompetitiveMember;
 import dolphin.members.Member;
 import java.util.ArrayList;
