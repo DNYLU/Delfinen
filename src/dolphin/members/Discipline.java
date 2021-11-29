@@ -6,10 +6,7 @@ public abstract class Discipline {
 
     Discipline(String name) {
         this.name = name;
-    }
-
-    Discipline(String name, double time) {
-        this.name = name;
+        this.time = 100.0;
     }
 
     public String getName() {
