@@ -1,5 +1,7 @@
 package dolphin.members;
 
+import dolphin.members.disciplines.*;
+
 import java.util.ArrayList;
 
 /**

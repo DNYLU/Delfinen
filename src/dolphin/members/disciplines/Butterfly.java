@@ -1,4 +1,4 @@
-package dolphin.members;
+package dolphin.members.disciplines;
 
 public class Butterfly extends Discipline {
 

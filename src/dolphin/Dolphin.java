@@ -3,7 +3,7 @@ import dolphin.members.Contingent;
 import dolphin.operations.AllMembers;
 import dolphin.operations.CreateMember;
 import dolphin.operations.DebtMembers;
-//import dolphin.operations.PassiveMembers;
+import dolphin.operations.Registration;
 
 public class Dolphin {
     public static void main(String[] args) {
@@ -15,7 +15,7 @@ public class Dolphin {
      TODO:
         Svømmetræner:
         - Registrering af stævne, placering og tid
-        - Oversigt over klubbens top 5 svømmere inden for HVER disciplin
+        - Oversigt over klubbens top 5 svømmer inden for HVER disciplin
         Filhåndtering:
         - Vi laver 2 filer som er junior og senior.
         - Inde i de filer har vi de 4 forskellige discipliner, som den skal opdatere selv med de bedste tider inde for det forskellige grene.
@@ -26,11 +26,12 @@ public class Dolphin {
         String[] menuItems = new String[10];
         Menu menu = new Menu("MENU", "-----HOVEDMENU-----", menuItems);
         menuItems[1] = "1. Opret nyt medlem.";
-        menuItems[2] = "2. Medlemmer af Delfinen.";
-        menuItems[3] = "3. Vis medlemmer i restance.";
+        menuItems[2] = "2. Vis medlemmer af Delfinen.";
+        menuItems[3] = "\n3. Vis medlemmer i restance.";
         menuItems[4] = "4. Vis forventet kontigent.";
+        menuItems[5] = "\n5. Stævne";
 
-        menuItems[9] = "9. QUIT"; // Kald det noget andet
+        menuItems[9] = "\n9. QUIT"; // Kald det noget andet
 
 
         boolean checkChoice = true;
@@ -48,11 +49,7 @@ public class Dolphin {
                 case 2:
                     System.out.println("Vælg et emne: ");
                     AllMembers allMembers = new AllMembers();
-                    //PassiveMembers passiveMembers = new PassiveMembers();
-                    //DebtMembers debtMembers = new DebtMembers();
                     allMembers.allMembers();
-                    //passiveMembers.passiveMembers();
-                    //debtMembers.debtMembers();
 
                     break;
 
@@ -67,6 +64,10 @@ public class Dolphin {
                     contingent.totalContingent();
                     System.out.println(contingent);
                     break;
+
+                case 5:
+                    Registration registration = new Registration();
+                    registration.run();
 
                 case 9:
                     System.out.println("Slutter programmet");

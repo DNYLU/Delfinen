@@ -1,7 +1,7 @@
 package dolphin.file;
 
 import dolphin.members.CompetitiveMember;
-import dolphin.members.Discipline;
+import dolphin.members.disciplines.Discipline;
 import dolphin.members.Member;
 
 import java.util.ArrayList;

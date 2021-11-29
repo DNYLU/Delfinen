@@ -4,11 +4,11 @@ package dolphin.util;
 public class MSG { //Klasse til evt. fejlbeskeder
 
     public void errorMessageInt() {
-        System.out.println("Indput er ikke et tal. Prøv igen.");
+        System.out.println("Indtastningen er ikke et tal. Prøv igen.");
     }
 
     public void errorMessageString() {
-        System.out.println("Indput er forkert. Prøv igen.");
+        System.out.println("Indtastningen er forkert. Prøv igen.");
     }
 
     public void errorMessageDate() {

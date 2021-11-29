@@ -1,4 +1,4 @@
-package dolphin.members;
+package dolphin.members.disciplines;
 
 import dolphin.util.SwimmingTime;
 
@@ -24,5 +24,8 @@ public abstract class Discipline {
                 this.time = time;
             }
         }
+    }
+    public String toString() {
+        return this.name;
     }
 }

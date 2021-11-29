@@ -2,6 +2,7 @@ package dolphin.operations;
 
 import dolphin.file.FileApi;
 import dolphin.members.*;
+import dolphin.members.disciplines.*;
 import dolphin.util.MSG;
 import dolphin.util.UserInput;
 import java.util.ArrayList;
