@@ -25,8 +25,21 @@ public class CompetitiveMember extends Member {
         String[] memberInfo = line.split(",");
         String[] disciplines = memberInfo[6].split(":");
 
+        Butterfly butterfly = new Butterfly(0.0);
+        Crawl crawl = new Crawl(0.0);
+        Backcrawl backcrawl = new Backcrawl(0.0);
+        Brystsvømning brystsvømning = new Brystsvømning(0.0);
+
         for (String discipline : disciplines) {
-            this.disciplines.add(Discipline.valueOf(discipline));
+            if (discipline.equals(butterfly.getName())) {
+                this.disciplines.add(butterfly);
+            } else if (discipline.equals(crawl.getName())) {
+                this.disciplines.add(crawl);
+            } else if (discipline.equals(backcrawl.getName())) {
+                this.disciplines.add(backcrawl);
+            } else if (discipline.equals(brystsvømning.getName())) {
+                this.disciplines.add(brystsvømning);
+            }
         }
 
     }

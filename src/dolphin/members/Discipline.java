@@ -15,4 +15,10 @@ public abstract class Discipline {
     public double getTime() {
         return this.time;
     }
+
+    public void setTime(double time) {
+        if (time < this.time) {
+            this.time = time;
+        }
+    }
 }
