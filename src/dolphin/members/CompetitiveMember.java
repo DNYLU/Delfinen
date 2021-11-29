@@ -32,7 +32,6 @@ public class CompetitiveMember extends Member {
         Backcrawl backcrawl = new Backcrawl();
         Brystsvømning brystsvømning = new Brystsvømning();
 
-
         for (String discipline : disciplines) {
             if (discipline.equals(butterfly.getName())) {
                 this.disciplines.add(butterfly);

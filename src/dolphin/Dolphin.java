@@ -65,6 +65,7 @@ public class Dolphin {
                 case 5:
                     Registration registration = new Registration();
                     registration.run();
+                    break;
 
                 case 9:
                     System.out.println("Slutter programmet");
