@@ -1,5 +1,10 @@
 package dolphin.members;
 
+import dolphin.file.FileApi;
+import dolphin.operations.AllMembers;
+
+import java.util.ArrayList;
+
 /**
  * @author David
  * @author Danny Lu
