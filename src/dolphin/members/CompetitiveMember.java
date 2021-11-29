@@ -56,4 +56,8 @@ public class CompetitiveMember extends Member {
         return fileString;
     }
 
+    public ArrayList<Discipline> getDisciplines() {
+        return this.disciplines;
+    }
+
 }
