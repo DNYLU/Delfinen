@@ -1,8 +1,9 @@
 package dolphin.util;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-// Dannie
+// Dannie & David
 public class CurrentYear {
 
   private LocalDate date;
@@ -15,12 +16,8 @@ public class CurrentYear {
       this.date = LocalDate.of(year, month, day);
     }
 
-    public void setDate(String year, String month, String day) {
-      int intYear = Integer.parseInt(year);
-      int intMonth = Integer.parseInt(month);
-      int intDay = Integer.parseInt(day);
-
-      this.date = LocalDate.of(intYear, intMonth, intDay);
+    public void setDate(int year, int month, int day) {
+      this.date = LocalDate.of(year, month, day);
     }
 
     public String toString() {

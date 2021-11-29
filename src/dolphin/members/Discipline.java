@@ -1,12 +1,17 @@
 package dolphin.members;
 
+import dolphin.util.SwimmingTime;
+
 public abstract class Discipline {
-    private double time;
+    private SwimmingTime time;
     private String name;
 
     Discipline(String name) {
         this.name = name;
-        this.time = 100.0;
+    }
+
+    public void setTime(SwimmingTime time) {
+        this.time = time;
     }
 
     public String getName() {
@@ -17,9 +22,11 @@ public abstract class Discipline {
         return this.time;
     }
 
-    public void setTime(double time) {
-        if (time < this.time) {
-            this.time = time;
+    public void setTime(SwimmingTime time) {
+        if (time != null) {
+            if (time < this.time) {
+                this.time = time;
+            }
         }
     }
 }

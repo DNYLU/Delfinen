@@ -10,4 +10,8 @@ public class MSG { //Klasse til evt. fejlbeskeder
     public void errorMessageString() {
         System.out.println("Indput er forkert. Prøv igen.");
     }
+
+    public void errorMessageDate() {
+        System.out.println("Ugyldig dato! Prøv igen.");
+    }
 }
