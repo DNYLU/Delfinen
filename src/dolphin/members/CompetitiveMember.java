@@ -25,14 +25,16 @@ public class CompetitiveMember extends Member {
         this.disciplines = new ArrayList<>();
         super.setDataFromFileLine(line);
         String[] memberInfo = line.split(",");
-        String[] disciplines = memberInfo[6].split(":");
+        String[] disciplines = memberInfo[7].split(":");
 
         Butterfly butterfly = new Butterfly();
         Crawl crawl = new Crawl();
         Backcrawl backcrawl = new Backcrawl();
         Brystsvømning brystsvømning = new Brystsvømning();
 
+
         for (String discipline : disciplines) {
+            System.out.println(discipline);
             if (discipline.equals(butterfly.getName())) {
                 this.disciplines.add(butterfly);
             } else if (discipline.equals(crawl.getName())) {
