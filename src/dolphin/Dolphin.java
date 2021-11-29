@@ -14,12 +14,6 @@ public class Dolphin {
 
     /*
      TODO:
-        Formand:
-        - Opret nyt medlem
-        - Vis alle medlemmer. Dannie
-        Kassereren:
-        - Vis forventet kontingent. dannie // file api har en modtode som henter alle medlemmere og retur dem.
-        - Vis medlemmer i restance
         Svømmetræner:
         - Registrering af stævne, placering og tid
         - Oversigt over klubbens top 5 svømmere inden for HVER disciplin
