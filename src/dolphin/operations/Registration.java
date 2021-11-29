@@ -31,7 +31,6 @@ public class Registration {
     private void lapTime() { // Indtaster
         boolean checkChoice = true;
         while (checkChoice) {
-
             // Finder member via ID
             System.out.println("-----SVØMMETID-----" +
                     "\n\nIndtast ID: ");
@@ -57,11 +56,11 @@ public class Registration {
             System.out.println("Vælg disciplin: ");
             System.out.println(disciplines);
             int choice = userInput.getIntInput();
+            System.out.println(disciplines.get(choice));
             if (choice >= 0 && choice < disciplines.size()) {
                 disciplin = disciplines.get(choice);
 
             }
-
 
             System.out.println("Indtast minutter: ");
             int minutes = userInput.getIntInput();
@@ -70,8 +69,8 @@ public class Registration {
             System.out.println("Indtast millisekunder: ");
             int milliSeconds = userInput.getIntInput();
             swimmingTime.getTotalTime();
-
             date();
+            checkChoice = false;
         }
     }
 
@@ -86,7 +85,7 @@ public class Registration {
             int practiceYear = userInput.getIntInput();
 
             try {
-                currentYear.setDate(practiceDay, practiceMonth, practiceYear);
+                currentYear.setDate(practiceYear, practiceMonth, practiceDay);
                 System.out.println("Dato: " + currentYear);
                 checkChoice = false;
             } catch (DateTimeParseException dateTimeParseException) {
@@ -95,6 +94,4 @@ public class Registration {
             }
         }
     }
-
-
 }

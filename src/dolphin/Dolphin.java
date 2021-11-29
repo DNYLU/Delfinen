@@ -47,13 +47,10 @@ public class Dolphin {
                     break;
 
                 case 2:
-                    System.out.println("Vælg et emne: ");
                     AllMembers allMembers = new AllMembers();
                     allMembers.allMembers();
-
                     break;
 
-                    // Metode der opretter nyt medlem i stedet for
                case 3:
                     DebtMembers debtMembers = new DebtMembers();
                     debtMembers.debtMembers();
