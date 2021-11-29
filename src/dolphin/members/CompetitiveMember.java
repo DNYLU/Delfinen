@@ -34,7 +34,6 @@ public class CompetitiveMember extends Member {
 
 
         for (String discipline : disciplines) {
-            System.out.println(discipline);
             if (discipline.equals(butterfly.getName())) {
                 this.disciplines.add(butterfly);
             } else if (discipline.equals(crawl.getName())) {
