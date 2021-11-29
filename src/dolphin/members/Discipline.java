@@ -4,6 +4,10 @@ public abstract class Discipline {
     private double time;
     private String name;
 
+    Discipline(String name) {
+        this.name = name;
+    }
+
     Discipline(String name, double time) {
         this.name = name;
     }

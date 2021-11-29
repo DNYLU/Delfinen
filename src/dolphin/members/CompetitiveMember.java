@@ -25,10 +25,10 @@ public class CompetitiveMember extends Member {
         String[] memberInfo = line.split(",");
         String[] disciplines = memberInfo[6].split(":");
 
-        Butterfly butterfly = new Butterfly(0.0);
-        Crawl crawl = new Crawl(0.0);
-        Backcrawl backcrawl = new Backcrawl(0.0);
-        Brystsvømning brystsvømning = new Brystsvømning(0.0);
+        Butterfly butterfly = new Butterfly();
+        Crawl crawl = new Crawl();
+        Backcrawl backcrawl = new Backcrawl();
+        Brystsvømning brystsvømning = new Brystsvømning();
 
         for (String discipline : disciplines) {
             if (discipline.equals(butterfly.getName())) {

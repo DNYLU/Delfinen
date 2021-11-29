@@ -12,10 +12,10 @@ public class CreateMember {
     public ArrayList<Member> allMembers = new ArrayList<>(); //TEST 1
     public ArrayList<Member> casualMembers = new ArrayList<>(); //TEST 1
     public ArrayList<CompetitiveMember> competitiveMembers = new ArrayList<>(); //TEST 1
-    Backcrawl rygcrawl = new Backcrawl(00.00);
-    Brystsvømning brystsvømning = new Brystsvømning(00.00);
-    Butterfly butterfly = new Butterfly(00.00);
-    Crawl crawl = new Crawl(00.00);
+    Backcrawl rygcrawl = new Backcrawl();
+    Brystsvømning brystsvømning = new Brystsvømning();
+    Butterfly butterfly = new Butterfly();
+    Crawl crawl = new Crawl();
 
     UserInput userInput = new UserInput();
     MSG msg = new MSG();
