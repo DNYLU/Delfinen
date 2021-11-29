@@ -10,21 +10,17 @@ public abstract class Discipline {
         this.name = name;
     }
 
-    public void setTime(SwimmingTime time) {
-        this.time = time;
-    }
-
     public String getName() {
         return this.name;
     }
 
-    public double getTime() {
-        return this.time;
+    public String getFormattedTime() {
+        return this.time.toString();
     }
 
     public void setTime(SwimmingTime time) {
         if (time != null) {
-            if (time < this.time) {
+            if (time.getTotalTime() < this.time.getTotalTime()) {
                 this.time = time;
             }
         }
