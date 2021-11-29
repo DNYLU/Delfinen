@@ -24,7 +24,6 @@ public class CurrentYear {
     }
 
     public String toString() {
-      this.setToCurrentDate();
       return this.date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
     }
 
