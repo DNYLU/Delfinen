@@ -82,10 +82,10 @@ public class FileManager {
         return members;
     }
 
-    public boolean createFolder() {
+    public void createFolder() {
         File file = new File(this.path);
-        boolean dirCreated = file.mkdir();
-        System.out.println(dirCreated);
-        return dirCreated;
+        if (file.exists()) {
+            file.mkdir();
+        }
     }
 }
