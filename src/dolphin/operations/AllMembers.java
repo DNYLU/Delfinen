@@ -4,6 +4,7 @@ import dolphin.file.FileApi;
 import dolphin.members.Member;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class AllMembers {
 
@@ -12,7 +13,9 @@ public class AllMembers {
     ArrayList<Member> allMembers = fileApi.getAllMembers();
 
     for (Member member : allMembers) {
-      System.out.println(member.getId() + " "+ member.getMemberName());
+      // Dette bliver lavet for, at kunne gøre det første bogstav stort
+      String output = member.getMemberName().substring(0, 1).toUpperCase() + member.getMemberName().substring(1);
+      System.out.println(member.getId() + " " + output);
     }
   }
 }
