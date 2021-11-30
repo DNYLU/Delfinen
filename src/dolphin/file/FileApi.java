@@ -26,6 +26,19 @@ public class FileApi {
         fileManager.writeLineToCsv(member.toFileString());
     }
 
+    public void overWriteAllMembers(String path) {
+        FileManager fileManager = new FileManager(path);
+
+        ArrayList<Member> allMembers = this.getAllMembers();
+        StringBuilder allMembersString = new StringBuilder();
+
+        for (Member member : allMembers) {
+            allMembersString.append(member.toFileString()).append("\n");
+        }
+
+        fileManager.overwriteFile(allMembersString.toString());
+    }
+
     //todo: change parameters to match the data
     public void insertTrainingResult(CompetitiveMember competitiveMember, Discipline discipline, double time) {
         FileManager fileManager = new FileManager(competitiveMember.getId() + "/trainingResults.csv");
