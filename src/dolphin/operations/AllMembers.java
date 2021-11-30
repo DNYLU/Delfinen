@@ -12,7 +12,7 @@ public class AllMembers {
     ArrayList<Member> allMembers = fileApi.getAllMembers();
 
     for (Member member : allMembers) {
-      System.out.println(member.getMemberName());
+      System.out.println(member.getId() + " "+ member.getMemberName());
     }
   }
 }
