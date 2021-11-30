@@ -51,10 +51,11 @@ public class CompetitiveMember extends Member {
         ArrayList<String> disciplinesString = new ArrayList<>();
 
         for (Discipline discipline : this.disciplines) {
-            disciplinesString.add(discipline.toString());
+            disciplinesString.add(discipline.toFileString());
         }
 
         fileString += String.join(":", disciplinesString);
+        System.out.println(fileString);
         return fileString;
     }
 

@@ -14,6 +14,9 @@ public class Date {
 
       this.date = LocalDate.of(year, month, day);
     }
+    public String toFileString() {
+      return this.date.getYear() + "-" + this.date.getMonth() + "-" + this.date.getDayOfMonth();
+    }
 
     public void setDate(int year, int month, int day) {
       this.date = LocalDate.of(year, month, day);
