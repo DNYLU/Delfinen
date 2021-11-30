@@ -26,7 +26,7 @@ public class FileApi {
         fileManager.writeLineToCsv(member.toFileString());
     }
 
-    public void overWriteAllMembers(String path) {
+    private void overWriteAllMembers(String path) {
         FileManager fileManager = new FileManager(path);
 
         ArrayList<Member> allMembers = this.getAllMembers();
@@ -37,6 +37,14 @@ public class FileApi {
         }
 
         fileManager.overwriteFile(allMembersString.toString());
+    }
+
+    public void overWriteCompetitiveMembers() {
+        this.overWriteAllMembers(this.competitivePath);
+    }
+
+    public void overWriteCasualMembers() {
+        this.overWriteAllMembers(this.casualPath);
     }
 
     //todo: change parameters to match the data
