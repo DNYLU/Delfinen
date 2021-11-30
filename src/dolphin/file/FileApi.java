@@ -26,12 +26,14 @@ public class FileApi {
         fileManager.writeLineToCsv(member.toFileString());
     }
 
+    //todo: change parameters to match the data
     public void insertTrainingResult(CompetitiveMember competitiveMember, Discipline discipline, double time) {
         FileManager fileManager = new FileManager(competitiveMember.getId() + "/trainingResults.csv");
 
         fileManager.writeLineToCsv(discipline + " " + time);
     }
 
+    //todo: change parameters to match the data
     public void insertCompetitionResult(CompetitiveMember competitiveMember, String competition, int placement, Discipline discipline, double time) {
         FileManager fileManager = new FileManager(competitiveMember.getId() + "/competitionResults.csv");
         fileManager.writeLineToCsv(competition + " " + placement + " " + discipline + " " + time);

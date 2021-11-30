@@ -1,8 +1,6 @@
 package dolphin.members;
 
-import dolphin.util.CurrentYear;
-
-import java.util.ArrayList;
+import dolphin.util.Date;
 
 // Lu og Dannie
 public class Member {
@@ -34,7 +32,7 @@ public class Member {
         this.id = id;
 
         //Henter det nuværende år
-        int currentYear = new CurrentYear().getCurrentYear();
+        int currentYear = new Date().getCurrentYear();
         this.memberAge = currentYear - this.memberYearOfBirth;
 
         // Swimmer i forhold til alderen
@@ -60,7 +58,7 @@ public class Member {
         SubscriptionType subscriptionType = SubscriptionType.valueOf(string[4]);
 
         this.memberYearOfBirth = yearOfBirth;
-        this.memberAge = this.memberYearOfBirth - new CurrentYear().getCurrentYear();
+        this.memberAge = this.memberYearOfBirth - new Date().getCurrentYear();
         this.ageGroup = ageGroup;
         this.subscriptionType = subscriptionType;
         this.swimmerType = string[5];

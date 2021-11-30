@@ -4,7 +4,7 @@ import dolphin.members.Member;
 import dolphin.members.disciplines.Discipline;
 import dolphin.util.UserInput;
 import dolphin.util.MSG;
-import dolphin.util.CurrentYear;
+import dolphin.util.Date;
 import dolphin.util.SwimmingTime;
 import dolphin.file.FileApi;
 import dolphin.members.CompetitiveMember;
@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class Registration {
     MSG msg = new MSG();
-    CurrentYear currentYear = new CurrentYear();
+    Date currentYear = new Date();
     SwimmingTime swimmingTime = new SwimmingTime();
     FileApi fileApi = new FileApi();
 

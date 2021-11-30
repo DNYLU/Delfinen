@@ -1,9 +1,11 @@
 package dolphin.members.disciplines;
 
+import dolphin.util.Date;
 import dolphin.util.SwimmingTime;
 
 public abstract class Discipline {
-    private SwimmingTime time;
+    private Date date;
+    private SwimmingTime swimmingTime;
     private String name;
 
     Discipline(String name) {
@@ -15,15 +17,19 @@ public abstract class Discipline {
     }
 
     public String getFormattedTime() {
-        return this.time.toString();
+        return this.swimmingTime.toString();
     }
 
-    public void setTime(SwimmingTime time) {
-        if (time != null) {
-            if (time.getTotalTime() < this.time.getTotalTime()) {
-                this.time = time;
+    public void setSwimmingTime(SwimmingTime swimmingTime) {
+        if (swimmingTime != null) {
+            if (swimmingTime.getTotalTime() < this.swimmingTime.getTotalTime()) {
+                this.swimmingTime = swimmingTime;
             }
         }
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
     public String toString() {
         return this.name;

@@ -3,7 +3,7 @@ package dolphin.util;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 // Dannie & David
-public class CurrentYear {
+public class Date {
 
   private LocalDate date;
 
