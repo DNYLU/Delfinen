@@ -12,6 +12,7 @@ import java.util.ArrayList;
 
 /**
  * used to write and read members from a specified file
+ *
  * @author David
  */
 public class FileManager {
@@ -43,6 +44,49 @@ public class FileManager {
             return false;
         }
         return true;
+    }
+
+    public void editMember(int id, String source) {
+        File tempFile = new File("temp.csv");
+        File file = new File(this.path);
+        FileWriter fileWriter;
+        Scanner scanner;
+
+
+        try {
+            scanner = new Scanner(file);
+        } catch (FileNotFoundException e) {
+            return;
+        }
+
+        try {
+            fileWriter = new FileWriter(tempFile, true);
+            scanner.useDelimiter(",");
+            while (scanner.hasNextLine()) {
+                String[] memberArray = scanner.nextLine().split(",");
+                int memberId = Integer.parseInt(memberArray[0]);
+
+                if (id == memberId) {
+                    fileWriter.write(source + "\n");
+                } else {
+                    fileWriter.write(scanner.nextLine());
+                }
+            }
+            fileWriter.close();
+        } catch (IOException ignored) {
+
+        }
+
+        scanner.close();
+        boolean fileDeleted = file.delete();
+        boolean fileRenamed = tempFile.renameTo(file);
+
+        if (!fileDeleted) {
+            System.out.println("old file not deleted");
+        }
+        if (!fileRenamed) {
+            System.out.println("Temporary file not renamed to old file");
+        }
     }
 
     /**
@@ -79,6 +123,7 @@ public class FileManager {
         while (scanner.hasNextLine()) {
             members.add(scanner.nextLine().split(","));
         }
+        scanner.close();
         return members;
     }
 

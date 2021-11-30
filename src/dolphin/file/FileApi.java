@@ -26,6 +26,19 @@ public class FileApi {
         fileManager.writeLineToCsv(member.toFileString());
     }
 
+    private void editMember(Member member, String path) {
+        FileManager fileManager = new FileManager(path);
+        fileManager.editMember(member.getId(), member.toFileString());
+    }
+
+    public void editCompetitiveMember(CompetitiveMember member) {
+        this.editMember(member, this.competitivePath);
+    }
+
+    public void editCasualMember(Member member) {
+        this.editMember(member, this.casualPath);
+    }
+
     private void overWriteAllMembers(String path) {
         FileManager fileManager = new FileManager(path);
 
@@ -35,7 +48,7 @@ public class FileApi {
         for (Member member : allMembers) {
             allMembersString.append(member.toFileString()).append("\n");
         }
-
+        System.out.println(allMembersString);
         fileManager.overwriteFile(allMembersString.toString());
     }
 

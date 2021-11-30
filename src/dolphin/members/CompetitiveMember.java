@@ -63,4 +63,8 @@ public class CompetitiveMember extends Member {
         return this.disciplines;
     }
 
+    public void setDisciplines(ArrayList<Discipline> disciplines) {
+        this.disciplines = disciplines;
+    }
+
 }

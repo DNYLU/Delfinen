@@ -33,21 +33,18 @@ public class SwimmingTime {
 
     public void setMinutes(int minutes) {
         if (minutes >= 0) {
-            System.out.println("min set");
             this.minutes = minutes;
         }
     }
 
     public void setSeconds(int seconds) {
         if (seconds >= 0) {
-            System.out.println("seconds set");
             this.seconds = seconds;
         }
     }
 
     public void setMilliSeconds(int milliSeconds) {
         if (milliSeconds >= 0) {
-            System.out.println("miliseconds set");
             this.milliSeconds = milliSeconds;
         }
     }

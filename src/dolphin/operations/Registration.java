@@ -51,14 +51,13 @@ public class Registration {
                 }
             }
             ArrayList<Discipline> disciplines = ((CompetitiveMember) member).getDisciplines();
-            Discipline disciplin;
+            Discipline discipline;
 
             System.out.println("Vælg disciplin: ");
             System.out.println(disciplines);
             int choice = userInput.getIntInput();
-            System.out.println(disciplines.get(choice));
             if (choice >= 0 && choice < disciplines.size()) {
-                disciplin = disciplines.get(choice);
+                discipline = disciplines.get(choice);
 
             }   else {
                 return;
@@ -73,12 +72,12 @@ public class Registration {
 
             SwimmingTime swimTime = new SwimmingTime(minutes, seconds, milliSeconds);
             date();
+
             checkChoice = false;
-            disciplin.setDate(this.date);
-            disciplin.setSwimmingTime(swimmingTime);
-            System.out.println(disciplin.getFormattedTime());
-            System.out.println(disciplines.get(choice).getFormattedTime());
-            fileApi.overWriteCompetitiveMembers();
+            discipline.setDate(this.date);
+            discipline.setSwimmingTime(swimTime);
+
+            fileApi.editCompetitiveMember((CompetitiveMember) member);
 
 
         }
