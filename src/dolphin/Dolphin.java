@@ -9,7 +9,6 @@ public class Dolphin {
     public static void main(String[] args) {
         Dolphin dolphin = new Dolphin();
         dolphin.run();
-
     }
 
     /*
@@ -42,7 +41,6 @@ public class Dolphin {
             int choice = menu.readChoice();
             switch (choice) {
                 case 1:
-                    System.out.println("Opretter nyt medlem");
                     CreateMember createMember = new CreateMember();
                     createMember.run();
                     break;
