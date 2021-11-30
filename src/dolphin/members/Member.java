@@ -49,7 +49,6 @@ public class Member {
     public void setDataFromFileLine(String line) {
         String[] string = line.split(",");
 
-
         this.id = Integer.parseInt(string[0]);
         this.memberName = string[1];
 

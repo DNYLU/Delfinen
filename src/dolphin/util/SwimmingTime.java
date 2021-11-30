@@ -14,6 +14,9 @@ public class SwimmingTime {
         this.setSeconds(seconds);
         this.setMilliSeconds(milliSeconds);
     }
+    public String toFileString() {
+        return this.minutes + "-" + this.seconds + "-" + this.milliSeconds;
+    }
 
     public String toString() {
         return this.minutes + ":" + this.seconds + ":" + this.milliSeconds;

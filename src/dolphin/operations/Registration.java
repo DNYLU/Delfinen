@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class Registration {
     MSG msg = new MSG();
-    Date currentYear = new Date();
+    Date date = new Date();
     SwimmingTime swimmingTime = new SwimmingTime();
     FileApi fileApi = new FileApi();
 
@@ -60,6 +60,8 @@ public class Registration {
             if (choice >= 0 && choice < disciplines.size()) {
                 disciplin = disciplines.get(choice);
 
+            }   else {
+                return;
             }
 
             System.out.println("Indtast minutter: ");
@@ -68,9 +70,17 @@ public class Registration {
             int seconds = userInput.getIntInput();
             System.out.println("Indtast millisekunder: ");
             int milliSeconds = userInput.getIntInput();
-            swimmingTime.getTotalTime();
+
+            SwimmingTime swimTime = new SwimmingTime(minutes, seconds, milliSeconds);
             date();
             checkChoice = false;
+            disciplin.setDate(this.date);
+            disciplin.setSwimmingTime(swimmingTime);
+            System.out.println(disciplin.getFormattedTime());
+            System.out.println(disciplines.get(choice).getFormattedTime());
+            fileApi.overWriteCompetitiveMembers();
+
+
         }
     }
 
@@ -85,8 +95,8 @@ public class Registration {
             int practiceYear = userInput.getIntInput();
 
             try {
-                currentYear.setDate(practiceYear, practiceMonth, practiceDay);
-                System.out.println("Dato: " + currentYear);
+                date.setDate(practiceYear, practiceMonth, practiceDay);
+                System.out.println("Dato: " + date);
                 checkChoice = false;
             } catch (DateTimeParseException dateTimeParseException) {
                 msg.errorMessageDate();
