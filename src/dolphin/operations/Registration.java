@@ -60,6 +60,7 @@ public class Registration {
                 discipline = disciplines.get(choice);
 
             }   else {
+                System.out.println("Kunne ikke finde disciplin. (Index starter på 0).");
                 return;
             }
 
