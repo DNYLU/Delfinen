@@ -61,7 +61,7 @@ public class FileApi {
     }
 
     public void insertCompetitionResult(CompetitionResult competitionResult, int id) {
-        String path = "Members/";
+        String path = "Members";
         FileManager fileManager = new FileManager(path);
         fileManager.createFolder();
         fileManager.setPath(path + id);
