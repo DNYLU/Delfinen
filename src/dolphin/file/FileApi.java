@@ -60,7 +60,6 @@ public class FileApi {
         this.overWriteAllMembers(this.casualPath);
     }
 
-    //todo: change parameters to match the data
     public void insertCompetitionResult(CompetitionResult competitionResult, int id) {
         String path = "Members/" + id;
         FileManager fileManager = new FileManager(path);
