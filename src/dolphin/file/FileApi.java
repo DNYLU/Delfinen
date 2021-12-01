@@ -67,7 +67,7 @@ public class FileApi {
         fileManager.setPath(path + id);
         fileManager.createFolder();
 
-        fileManager.setPath(path + id + "/competitionResults.csv");
+        fileManager.setPath(path + "/" + id + "/competitionResults.csv");
         fileManager.writeLineToCsv(competitionResult.toFileString());
     }
 
