@@ -28,7 +28,6 @@ public class FileManager {
      * @return a boolean, true if the file was created and false if not
      */
     private boolean writeToCsv(String source, boolean append) {
-        String[] path = this.path.split("/");
         File file = new File(this.path);
         FileWriter fileWriter;
 
@@ -127,10 +126,17 @@ public class FileManager {
         return members;
     }
 
+    /**
+     * If the folder already exists then it will not be created again
+     */
     public void createFolder() {
         File file = new File(this.path);
-        if (file.exists()) {
-            file.mkdir();
+        if (!file.exists()) {
+            file.mkdirs();
         }
+    }
+
+    public void setPath(String path) {
+        this.path = path;
     }
 }

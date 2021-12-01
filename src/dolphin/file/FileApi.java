@@ -1,8 +1,8 @@
 package dolphin.file;
 
 import dolphin.members.CompetitiveMember;
-import dolphin.members.disciplines.Discipline;
 import dolphin.members.Member;
+import dolphin.util.CompetitionResult;
 
 import java.util.ArrayList;
 
@@ -61,16 +61,13 @@ public class FileApi {
     }
 
     //todo: change parameters to match the data
-    public void insertTrainingResult(CompetitiveMember competitiveMember, Discipline discipline, double time) {
-        FileManager fileManager = new FileManager(competitiveMember.getId() + "/trainingResults.csv");
+    public void insertCompetitionResult(CompetitionResult competitionResult, int id) {
+        String path = "Members/" + id;
+        FileManager fileManager = new FileManager(path);
+        fileManager.createFolder();
 
-        fileManager.writeLineToCsv(discipline + " " + time);
-    }
-
-    //todo: change parameters to match the data
-    public void insertCompetitionResult(CompetitiveMember competitiveMember, String competition, int placement, Discipline discipline, double time) {
-        FileManager fileManager = new FileManager(competitiveMember.getId() + "/competitionResults.csv");
-        fileManager.writeLineToCsv(competition + " " + placement + " " + discipline + " " + time);
+        fileManager.setPath(path + "/competitionResults.csv");
+        fileManager.writeLineToCsv(competitionResult.toFileString());
     }
 
     public ArrayList<Member> getAllMembers() {

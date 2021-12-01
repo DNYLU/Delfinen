@@ -4,7 +4,7 @@ import dolphin.members.CompetitiveMember;
 import dolphin.members.disciplines.Discipline;
 import dolphin.operations.SwimmingCompetition;
 
-public class CompetitionResults {
+public class CompetitionResult {
     int memberID;
     int placement;
     Date date;
