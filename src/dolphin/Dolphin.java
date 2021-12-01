@@ -1,9 +1,6 @@
 package dolphin;
 import dolphin.members.Contingent;
-import dolphin.operations.AllMembers;
-import dolphin.operations.CreateMember;
-import dolphin.operations.DebtMembers;
-import dolphin.operations.Registration;
+import dolphin.operations.*;
 
 public class Dolphin {
     public static void main(String[] args) {
@@ -69,7 +66,9 @@ public class Dolphin {
                     break;
 
                 case 6:
-
+                    SwimmingCompetition swimmingCompetition = new SwimmingCompetition();
+                    swimmingCompetition.run();
+                    break;
                 case 9:
                     System.out.println("Slutter programmet");
                     checkChoice = false;

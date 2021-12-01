@@ -7,17 +7,23 @@ import dolphin.operations.SwimmingCompetition;
 public class CompetitionResult {
     int memberID;
     int placement;
-    Date date;
     Discipline discipline;
 
     public String toFileString() {
-
-        return this.date.toFileString() + " " +
+        return
                 this.discipline.toFileString() + " " +
                 this.placement;
     }
 
+    public void setDiscipline(Discipline discipline) {
+        this.discipline = discipline;
+    }
+
     public int getMemberID() {
         return memberID;
+    }
+
+    public void setMemberID(int memberID) {
+        this.memberID = memberID;
     }
 }
