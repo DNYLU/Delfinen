@@ -1,5 +1,8 @@
 package dolphin;
 import dolphin.members.Contingent;
+import dolphin.menu.Chairman;
+import dolphin.menu.Coach;
+import dolphin.menu.Treasurer;
 import dolphin.operations.AllMembers;
 import dolphin.operations.CreateMember;
 import dolphin.operations.DebtMembers;
@@ -25,13 +28,9 @@ public class Dolphin {
     private void run() {
         String[] menuItems = new String[10];
         Menu menu = new Menu("MENU", "-----HOVEDMENU-----", menuItems);
-        menuItems[1] = "1. Opret nyt medlem.";
-        menuItems[2] = "2. Vis medlemmer af Delfinen.";
-        menuItems[3] = "\n3. Vis medlemmer i restance.";
-        menuItems[4] = "4. Vis forventet kontigent.";
-
-        menuItems[5] = "\n5. Træningstid";
-        menuItems[6] = "6. Stævne";
+        menuItems[1] = "1. FORMAND";
+        menuItems[2] = "2. KASSERER";
+        menuItems[3] = "3. SVØMMETRÆNER";
 
         menuItems[9] = "\n9. QUIT"; // Kald det noget andet
 
@@ -43,32 +42,19 @@ public class Dolphin {
             int choice = menu.readChoice();
             switch (choice) {
                 case 1:
-                    CreateMember createMember = new CreateMember();
-                    createMember.run();
+                    Chairman chairman = new Chairman();
+                    chairman.run();
                     break;
 
                 case 2:
-                    AllMembers allMembers = new AllMembers();
-                    allMembers.allMembers();
+                    Treasurer treasurer = new Treasurer();
+                    treasurer.run();
                     break;
 
                case 3:
-                    DebtMembers debtMembers = new DebtMembers();
-                    debtMembers.debtMembers();
+                   Coach coach = new Coach();
+                   coach.run();
                     break;
-
-                case 4:
-                    Contingent contingent = new Contingent(); // Her henter vi hele det samlede kontingent beløb.
-                    contingent.totalContingent();
-                    System.out.println(contingent);
-                    break;
-
-                case 5:
-                    Registration registration = new Registration();
-                    registration.run();
-                    break;
-
-                case 6:
 
                 case 9:
                     System.out.println("Slutter programmet");

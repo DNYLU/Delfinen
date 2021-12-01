@@ -108,4 +108,19 @@ public class FileApi {
         return member;
     }
 
+    public ArrayList<CompetitiveMember> getCompetitiveMembers() {
+        FileManager fileManager = new FileManager(this.competitivePath);
+
+        ArrayList<String[]> competitiveMembers = fileManager.readLinesFromCsv();
+        ArrayList<CompetitiveMember> allCompetitiveMembers = new ArrayList<>();
+
+        if (competitiveMembers != null) {
+            for (String[] competitiveMember : competitiveMembers) {
+                CompetitiveMember member = new CompetitiveMember();
+                member.setDataFromFileLine(String.join(",", competitiveMember));
+                allCompetitiveMembers.add(member);
+            }
+        }
+        return allCompetitiveMembers;
+    }
 }
