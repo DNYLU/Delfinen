@@ -132,8 +132,7 @@ public class FileManager {
     public void createFolder() {
         File file = new File(this.path);
         if (!file.exists()) {
-            boolean test = file.mkdir();
-            System.out.println(test);
+            file.mkdir();
         }
     }
 
