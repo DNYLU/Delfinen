@@ -16,9 +16,6 @@ public class FileApi {
 
     public void writeCompetitiveMember(CompetitiveMember competitiveMember) {
         this.writeMember(competitiveMember, this.competitivePath);
-
-        FileManager fileManager = new FileManager(String.valueOf(competitiveMember.getId()));
-        fileManager.createFolder();
     }
 
     private void writeMember(Member member, String path) {
