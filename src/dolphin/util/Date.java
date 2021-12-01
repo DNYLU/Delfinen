@@ -15,7 +15,22 @@ public class Date {
       this.date = LocalDate.of(year, month, day);
     }
     public String toFileString() {
-      return this.date.getYear() + "-" + this.date.getMonth() + "-" + this.date.getDayOfMonth();
+      if (this.date == null) {
+        return "";
+      }
+      return this.date.getYear() + "-" + this.date.getMonthValue() + "-" + this.date.getDayOfMonth();
+    }
+
+    public void setDataFromFileLine(String line) {
+      String[] data = line.split("-");
+      if (data.length < 2) {
+        return;
+      }
+      int year = Integer.parseInt(data[4]);
+      int month = Integer.parseInt(data[5]);
+      int day = Integer.parseInt(data[6]);
+
+      this.setDate(year, month, day);
     }
 
     public void setDate(int year, int month, int day) {

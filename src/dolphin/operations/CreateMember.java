@@ -14,7 +14,7 @@ public class CreateMember {
     public ArrayList<Member> casualMembers = new ArrayList<>(); //TEST 1
     public ArrayList<CompetitiveMember> competitiveMembers = new ArrayList<>(); //TEST 1
     Backcrawl rygcrawl = new Backcrawl();
-    Brystsvømning brystsvømning = new Brystsvømning();
+    BreastStroke brystsvømning = new BreastStroke();
     Butterfly butterfly = new Butterfly();
     Crawl crawl = new Crawl();
 

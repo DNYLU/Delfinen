@@ -27,23 +27,26 @@ public class CompetitiveMember extends Member {
         String[] memberInfo = line.split(",");
         String[] disciplines = memberInfo[7].split(":");
 
+
         Butterfly butterfly = new Butterfly();
         Crawl crawl = new Crawl();
         Backcrawl backcrawl = new Backcrawl();
-        Brystsvømning brystsvømning = new Brystsvømning();
+        BreastStroke breastStroke = new BreastStroke();
 
-        for (String discipline : disciplines) {
-            if (discipline.equals(butterfly.getName())) {
-                this.disciplines.add(butterfly);
-            } else if (discipline.equals(crawl.getName())) {
-                this.disciplines.add(crawl);
-            } else if (discipline.equals(backcrawl.getName())) {
-                this.disciplines.add(backcrawl);
-            } else if (discipline.equals(brystsvømning.getName())) {
-                this.disciplines.add(brystsvømning);
+        for (int i = 0; i < disciplines.length; i++) {
+            Discipline discipline = new Butterfly();
+            discipline.setDataFromFileLine(disciplines[i]);
+
+            if (discipline.getName().equals(butterfly.getName())) {
+                this.disciplines.add((Butterfly) discipline);
+            } else if (discipline.getName().equals(crawl.getName())) {
+                this.disciplines.add(discipline);
+            } else if (discipline.getName().equals(backcrawl.getName())) {
+                this.disciplines.add(discipline);
+            } else {
+                this.disciplines.add(discipline);
             }
         }
-
     }
 
     public String toFileString() {

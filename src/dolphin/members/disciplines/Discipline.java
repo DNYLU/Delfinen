@@ -32,6 +32,22 @@ public abstract class Discipline {
         }
     }
 
+    public void setDataFromFileLine(String line) {
+        String[] data = line.split("-");
+
+        this.name = data[0];
+
+        if (data.length > 1) {
+            this.swimmingTime = new SwimmingTime();
+            this.swimmingTime.setDataFromFileLine(line);
+        }
+
+        if (data.length > 2) {
+            this.date = new Date();
+            this.date.setDataFromFileLine(line);
+        }
+    }
+
     public String toFileString() {
         String dateString = "";
         String swimmingString = "";
@@ -42,7 +58,7 @@ public abstract class Discipline {
             swimmingString = "-" + this.swimmingTime.toFileString();
 
         }
-        return this.name + dateString + swimmingString;
+        return this.name + swimmingString + dateString;
     }
 
     public void setDate(Date date) {

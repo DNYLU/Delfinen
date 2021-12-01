@@ -73,11 +73,11 @@ public class Registration {
             SwimmingTime swimTime = new SwimmingTime(minutes, seconds, milliSeconds);
             date();
 
-            checkChoice = false;
             discipline.setDate(this.date);
             discipline.setSwimmingTime(swimTime);
 
             fileApi.editCompetitiveMember((CompetitiveMember) member);
+            checkChoice = false;
 
 
         }
@@ -94,8 +94,8 @@ public class Registration {
             int practiceYear = userInput.getIntInput();
 
             try {
-                date.setDate(practiceYear, practiceMonth, practiceDay);
-                System.out.println("Dato: " + date);
+                this.date.setDate(practiceYear, practiceMonth, practiceDay);
+                System.out.println("Dato: " + this.date);
                 checkChoice = false;
             } catch (DateTimeParseException dateTimeParseException) {
                 msg.errorMessageDate();
