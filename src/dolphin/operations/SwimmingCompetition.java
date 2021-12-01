@@ -1,31 +1,40 @@
 package dolphin.operations;
 
-import dolphin.members.Member;
-import dolphin.members.disciplines.Discipline;
-import dolphin.util.UserInput;
-import dolphin.util.MSG;
-import dolphin.util.Date;
-import dolphin.util.SwimmingTime;
 import dolphin.file.FileApi;
 import dolphin.members.CompetitiveMember;
+import dolphin.members.Member;
+import dolphin.members.disciplines.Discipline;
+import dolphin.util.Date;
+import dolphin.util.MSG;
+import dolphin.util.SwimmingTime;
+import dolphin.util.UserInput;
 import dolphin.operations.FindCompetitiveMember;
 
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 
-public class Registration {
+public class SwimmingCompetition {
     MSG msg = new MSG();
     Date date = new Date();
     SwimmingTime swimmingTime = new SwimmingTime();
     FileApi fileApi = new FileApi();
-    FindCompetitiveMember findCompetitiveMember = new FindCompetitiveMember();
     UserInput userInput = new UserInput();
+    FindCompetitiveMember findCompetitiveMember = new FindCompetitiveMember();
+
   /*
-    Denne klasse skal kunne registrerer svømmerne til træning og angive placering og tid.
+    Denne klasse skal kunne registrerer svømmerne til stævner og angive placering og tid.
     Derudover skal der vises top 5 svømmer for hver disciplin.
    */
 
     public void run() {
+        swimmingCompetition();
+    }
+
+    private void swimmingCompetition() {
+        System.out.println("-----STÆVNE-----");
+        System.out.println("Indtast stævne: ");
+        String competition = userInput.getStringInput();
+
         lapTime();
     }
 
@@ -33,8 +42,8 @@ public class Registration {
         boolean checkChoice = true;
         while (checkChoice) {
             // Finder member via ID
-            System.out.println("-----SVØMMETID-----");
 
+            // Find ID på medlem
             CompetitiveMember member = findCompetitiveMember.findID();
 
             ArrayList<Discipline> disciplines = member.getDisciplines();
@@ -50,7 +59,6 @@ public class Registration {
                 System.out.println("Kunne ikke finde disciplin. (Index starter på 0).");
                 return;
             }
-
             System.out.println("Indtast minutter: ");
             int minutes = userInput.getIntInput();
             System.out.println("Indtast sekunder: ");

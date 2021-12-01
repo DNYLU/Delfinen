@@ -29,7 +29,9 @@ public class Dolphin {
         menuItems[2] = "2. Vis medlemmer af Delfinen.";
         menuItems[3] = "\n3. Vis medlemmer i restance.";
         menuItems[4] = "4. Vis forventet kontigent.";
-        menuItems[5] = "\n5. Stævne";
+
+        menuItems[5] = "\n5. Træningstid";
+        menuItems[6] = "6. Stævne";
 
         menuItems[9] = "\n9. QUIT"; // Kald det noget andet
 
@@ -56,7 +58,7 @@ public class Dolphin {
                     break;
 
                 case 4:
-                    Contingent contingent = new Contingent(); // Her henter vi hele det samlede kontigent beløb.
+                    Contingent contingent = new Contingent(); // Her henter vi hele det samlede kontingent beløb.
                     contingent.totalContingent();
                     System.out.println(contingent);
                     break;
@@ -65,6 +67,8 @@ public class Dolphin {
                     Registration registration = new Registration();
                     registration.run();
                     break;
+
+                case 6:
 
                 case 9:
                     System.out.println("Slutter programmet");
