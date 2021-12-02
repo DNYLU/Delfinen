@@ -18,16 +18,7 @@ public class Dolphin {
         dolphin.run();
     }
 
-    /*
-     TODO:
-        Svømmetræner:
-        - Registrering af stævne, placering og tid
-        - Oversigt over klubbens top 5 svømmer inden for HVER disciplin
-        Filhåndtering:
-        - Vi laver 2 filer som er junior og senior.
-        - Inde i de filer har vi de 4 forskellige discipliner, som den skal opdatere selv med de bedste tider inde for det forskellige grene.
-        - Her bruger vi collection.sort til at finde de bedste tider og placere dem i den rigtige rækkefølge.
-        */
+
 
     private void run() {
         String[] menuItems = new String[10];

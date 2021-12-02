@@ -1,5 +1,6 @@
 package dolphin.util;
 
+import dolphin.MemberTime;
 import dolphin.file.FileApi;
 import dolphin.members.AgeGroup;
 import dolphin.members.CompetitiveMember;
@@ -44,25 +45,26 @@ public class Top5 {
         return sortedJunior;
     }
 
-    public ArrayList<Discipline> topFive(ArrayList<CompetitiveMember> members, String name) {
-        ArrayList<CompetitiveMember> seniorMember = sortSeniorCompetitiveMembers();
-        ArrayList<Discipline> disciplines = new ArrayList<>();
+    public ArrayList<MemberTime> topFive(ArrayList<CompetitiveMember> members, String name) {
+        ArrayList<MemberTime> memberTimes = new ArrayList<>();
         for (CompetitiveMember competitiveMember : members) {
             for (Discipline discipline : competitiveMember.getDisciplines()) {
+
                 if (discipline.getName().equals(name)) {
-                    disciplines.add(discipline);
+                    MemberTime memberTime = new MemberTime(competitiveMember, discipline.getSwimmingTime());
+                    memberTimes.add(memberTime);
                 }
             }
         }
-        return disciplines;
+        return memberTimes;
     }
 
     public void run(String name) {
         ArrayList<CompetitiveMember> juniorMember = sortJuniorCompetitiveMembers();
         ArrayList<CompetitiveMember> seniorMember = sortSeniorCompetitiveMembers();
 
-        ArrayList<Discipline> juniorDiscipline = topFive(juniorMember, name);
-        ArrayList<Discipline> seniorDiscipline = topFive(seniorMember, name);
+        ArrayList<MemberTime> juniorDiscipline = topFive(juniorMember, name);
+        ArrayList<MemberTime> seniorDiscipline = topFive(seniorMember, name);
         Collections.sort(juniorDiscipline);
         Collections.sort(seniorDiscipline);
 
@@ -70,16 +72,18 @@ public class Top5 {
         displayTop5(seniorDiscipline);
     }
 
-    public void displayTop5(ArrayList<Discipline> disciplines) {
+    public void displayTop5(ArrayList<MemberTime> memberTimes) {
         boolean displayTop5 = true;
         int index = 0;
         while (displayTop5) {
-            if (index >= disciplines.size()) {
+            if (index >= memberTimes.size()) {
                 displayTop5 = false;
             } else if (index == 5) {
                 displayTop5 = false;
             } else {
-                System.out.println(disciplines.get(index).getFormattedTime());
+                String nameId = memberTimes.get(index).getMemberId() + " " + memberTimes.get(index).getCompetitiveMemberName();
+                String formattedSwimTime = memberTimes.get(index).getFormattedSwimmingTime();
+                System.out.println(nameId + ": " + formattedSwimTime);
                 index++;
             }
 

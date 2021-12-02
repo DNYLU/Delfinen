@@ -39,6 +39,10 @@ public abstract class Discipline implements Comparable<Discipline> {
     }
   }
 
+  public SwimmingTime getSwimmingTime() {
+    return swimmingTime;
+  }
+
   public void setDataFromFileLine(String line) {
     String[] data = line.split("-");
 
