@@ -6,6 +6,10 @@ import dolphin.operations.DebtMembers;
 
 public class Treasurer {
 
+    /**
+     * @author Lu
+     */
+
     public void run() {
         String[] menuItems = new String[10];
         Menu menu = new Menu("MENU", "-----KASSERER-----", menuItems);

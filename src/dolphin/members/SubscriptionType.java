@@ -1,5 +1,8 @@
 package dolphin.members;
-// Lu & David
+/**
+ * @author Lu
+ * @author David
+ */
 public enum SubscriptionType {
   ACTIVE("Aktiv"),
   PASSIVE("Passiv");

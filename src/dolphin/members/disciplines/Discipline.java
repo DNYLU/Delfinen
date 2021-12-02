@@ -3,6 +3,11 @@ package dolphin.members.disciplines;
 import dolphin.util.Date;
 import dolphin.util.SwimmingTime;
 
+/**
+ * @author David
+ * @author Lu
+ */
+
 public abstract class Discipline {
     private Date date;
     private SwimmingTime swimmingTime;

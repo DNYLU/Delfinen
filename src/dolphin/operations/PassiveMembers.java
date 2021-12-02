@@ -4,7 +4,7 @@ import dolphin.file.FileManager;
 import dolphin.members.CompetitiveMember;
 import dolphin.members.Member;
 import java.util.ArrayList;
-
+// Dannie
 public class PassiveMembers {
 
   public void passiveMembers () {

@@ -4,6 +4,11 @@ import dolphin.members.CompetitiveMember;
 import dolphin.members.disciplines.Discipline;
 import dolphin.operations.SwimmingCompetition;
 
+/**
+ * @author Lu
+ * @author David
+ */
+
 public class CompetitionResult {
     int memberID;
     int placement;

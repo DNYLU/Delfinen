@@ -14,6 +14,11 @@ import dolphin.util.CompetitionResult;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 
+/**
+ * @author Lu
+ * @author David
+ */
+
 public class SwimmingCompetition {
     MSG msg = new MSG();
     SwimmingTime swimmingTime = new SwimmingTime();

@@ -1,5 +1,8 @@
 package dolphin.util;
-
+/**
+ * @author David
+ * @author Lu
+ */
 public class SwimmingTime {
     int minutes;
     int seconds;

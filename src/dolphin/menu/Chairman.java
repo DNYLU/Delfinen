@@ -4,6 +4,9 @@ import dolphin.Menu;
 import dolphin.operations.AllMembers;
 import dolphin.operations.CreateMember;
 
+/**
+ * @author Lu
+ */
 
 public class Chairman {
 

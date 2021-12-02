@@ -8,6 +8,11 @@ import dolphin.members.disciplines.Crawl;
 import dolphin.operations.Registration;
 import dolphin.util.Top5;
 
+/**
+ * @author Lu
+ * @author David
+ */
+
 public class Top5Menu {
     public void run() {
         Top5 top5 = new Top5();

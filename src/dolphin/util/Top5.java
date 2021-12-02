@@ -9,6 +9,11 @@ import dolphin.operations.AllMembers;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/**
+ * @author Lu
+ * @author David
+ */
+
 public class Top5 {
     FileApi fileApi = new FileApi();
     AllMembers allMembers = new AllMembers();
@@ -61,6 +66,8 @@ public class Top5 {
         for (int i = 0; i < juniorDiscipline ; i++) {
 
         }
+
+        Collections.sort(juniorDiscipline);
     }
 
 }

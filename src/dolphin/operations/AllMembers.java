@@ -6,6 +6,10 @@ import dolphin.members.Member;
 import java.util.ArrayList;
 import java.util.Locale;
 
+/**
+ * @author Dannie
+ */
+
 public class AllMembers {
 
   public void allMembers() {

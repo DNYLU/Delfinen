@@ -8,7 +8,11 @@ import dolphin.util.UserInput;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-// Lu & David
+/**
+ * @author Lu
+ * @author David
+ */
+
 public class CreateMember {
     public ArrayList<Member> allMembers = new ArrayList<>(); //TEST 1
     public ArrayList<Member> casualMembers = new ArrayList<>(); //TEST 1

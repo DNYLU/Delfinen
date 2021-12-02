@@ -1,5 +1,8 @@
 package dolphin.members;
-
+/**
+ * @author Lu
+ * @author David
+ */
 public enum SwimmerType {
     CASUAL("Motionist"),
     COMPETITIVE("Konkurrencesvømmer");
