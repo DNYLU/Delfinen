@@ -9,10 +9,10 @@ import dolphin.util.SwimmingTime;
  * @author Umaid
  */
 
-public abstract class Discipline {
-    private Date date;
-    private SwimmingTime swimmingTime;
-    private String name;
+public abstract class Discipline implements Comparable<Discipline> {
+    protected Date date;
+    protected SwimmingTime swimmingTime;
+    protected String name;
 
 
   Discipline(String name) {

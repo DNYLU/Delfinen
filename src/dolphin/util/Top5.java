@@ -12,6 +12,7 @@ import java.util.Collections;
 /**
  * @author Lu
  * @author David
+ * @author Umaid
  */
 
 public class Top5 {
@@ -56,18 +57,33 @@ public class Top5 {
         return disciplines;
     }
 
-    public void showTopFive(String name) {
+    public void run(String name) {
         ArrayList<CompetitiveMember> juniorMember = sortJuniorCompetitiveMembers();
         ArrayList<CompetitiveMember> seniorMember = sortSeniorCompetitiveMembers();
 
         ArrayList<Discipline> juniorDiscipline = topFive(juniorMember, name);
         ArrayList<Discipline> seniorDiscipline = topFive(seniorMember, name);
+        Collections.sort(juniorDiscipline);
+        Collections.sort(seniorDiscipline);
 
-        for (int i = 0; i < juniorDiscipline ; i++) {
+        displayTop5(juniorDiscipline);
+        displayTop5(seniorDiscipline);
+    }
+
+    public void displayTop5(ArrayList<Discipline> disciplines) {
+        boolean displayTop5 = true;
+        int index = 0;
+        while (displayTop5) {
+            if (index >= disciplines.size()) {
+                displayTop5 = false;
+            } else if (index == 5) {
+                displayTop5 = false;
+            } else {
+                System.out.println(disciplines.get(index).getFormattedTime());
+                index++;
+            }
 
         }
-
-        Collections.sort(juniorDiscipline);
     }
 
 }
