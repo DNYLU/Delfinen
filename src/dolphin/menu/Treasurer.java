@@ -44,6 +44,6 @@ public class Treasurer {
                     checkChoice = false;
             }
         }
-        while (checkChoice); // Loop der kører, så længe den er false
+        while (checkChoice); // Loop der kører, så længe den er true
     }
 }

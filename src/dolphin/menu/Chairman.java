@@ -43,6 +43,6 @@ public class Chairman {
                     checkChoice = false;
             }
         }
-        while (checkChoice); // Loop der kører, så længe den er false
+        while (checkChoice); // Loop der kører, så længe den er true
     }
 }
