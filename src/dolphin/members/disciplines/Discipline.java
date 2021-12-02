@@ -6,6 +6,7 @@ import dolphin.util.SwimmingTime;
 /**
  * @author David
  * @author Lu
+ * @author Umaid
  */
 
 public abstract class Discipline {
