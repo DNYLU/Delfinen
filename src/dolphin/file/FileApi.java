@@ -100,7 +100,6 @@ public class FileApi {
         for (Member member1 : members) {
             if (member1.getId() == id) {
                 member = member1;
-                System.out.println(member.getId());
 
             }
 

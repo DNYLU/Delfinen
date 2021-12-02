@@ -4,7 +4,7 @@ import dolphin.MemberTime;
 import dolphin.file.FileApi;
 import dolphin.members.AgeGroup;
 import dolphin.members.CompetitiveMember;
-import dolphin.members.disciplines.*;
+import dolphin.members.Discipline;
 import dolphin.operations.AllMembers;
 
 import java.util.ArrayList;
@@ -50,8 +50,11 @@ public class Top5 {
             for (Discipline discipline : competitiveMember.getDisciplines()) {
 
                 if (discipline.getName().equals(name)) {
-                    MemberTime memberTime = new MemberTime(competitiveMember, discipline.getSwimmingTime());
-                    memberTimes.add(memberTime);
+
+                    if (!(discipline.getSwimmingTime() == null)) {
+                        MemberTime memberTime = new MemberTime(competitiveMember, discipline.getSwimmingTime());
+                        memberTimes.add(memberTime);
+                    }
                 }
             }
         }

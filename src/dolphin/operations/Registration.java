@@ -1,14 +1,12 @@
 package dolphin.operations;
 
-import dolphin.members.Member;
-import dolphin.members.disciplines.Discipline;
+import dolphin.members.Discipline;
 import dolphin.util.UserInput;
 import dolphin.util.MSG;
 import dolphin.util.Date;
 import dolphin.util.SwimmingTime;
 import dolphin.file.FileApi;
 import dolphin.members.CompetitiveMember;
-import dolphin.operations.FindCompetitiveMember;
 
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;

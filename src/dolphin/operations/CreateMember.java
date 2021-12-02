@@ -2,10 +2,10 @@ package dolphin.operations;
 
 import dolphin.file.FileApi;
 import dolphin.members.*;
-import dolphin.members.disciplines.*;
 import dolphin.util.MSG;
 import dolphin.util.UserInput;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 
 /**
@@ -17,10 +17,6 @@ public class CreateMember {
     public ArrayList<Member> allMembers = new ArrayList<>(); //TEST 1
     public ArrayList<Member> casualMembers = new ArrayList<>(); //TEST 1
     public ArrayList<CompetitiveMember> competitiveMembers = new ArrayList<>(); //TEST 1
-    Backcrawl rygcrawl = new Backcrawl();
-    BreastStroke brystsvømning = new BreastStroke();
-    Butterfly butterfly = new Butterfly();
-    Crawl crawl = new Crawl();
 
     UserInput userInput = new UserInput();
     MSG msg = new MSG();
@@ -101,38 +97,36 @@ public class CreateMember {
     }
 
     private ArrayList<Discipline> chooseDiscipline() {
-        Discipline disciplineChoice;
+        HashMap<Integer, Discipline> disciplineMap = new HashMap<>();
+        disciplineMap.put(1, new Discipline(Disciplines.BUTTERFLY.getName()));
+        disciplineMap.put(2, new Discipline(Disciplines.CRAWL.getName()));
+        disciplineMap.put(3, new Discipline(Disciplines.BACK_CRAWL.getName()));
+        disciplineMap.put(4, new Discipline(Disciplines.BREAST_STROKE.getName()));
 
-        HashSet<Discipline> disciplines = new HashSet<>(); // Der kan ikke være duplicates af disciplin-værdierne
-
+        HashSet<Integer> disciplinesNums = new HashSet<>();
         boolean addingDiciplines = true;
         while (addingDiciplines) {
             System.out.println("Vælg disciplin:" +
-                    "\n1. " + butterfly.getName() +
-                    "\n2. " + crawl.getName() +
-                    "\n3. " + rygcrawl.getName() +
-                    "\n4. " + brystsvømning.getName() +
+                    "\n1. " + disciplineMap.get(1) +
+                    "\n2. " + disciplineMap.get(2) +
+                    "\n3. " + disciplineMap.get(3) +
+                    "\n4. " + disciplineMap.get(4) +
                     "\n\n9. FÆRDIG");
             int choice = userInput.getIntInput();
 
-            if (choice == 1) {
-                disciplines.add(butterfly);
-                System.out.println(butterfly.getName() + " er blevet tilføjet\n");
-            } else if (choice == 2) {
-                disciplines.add(crawl);
-                System.out.println(crawl.getName() + " er blevet tilføjet\n");
-            } else if (choice == 3) {
-                disciplines.add(rygcrawl);
-                System.out.println(rygcrawl.getName() + " er blevet tilføjet\n");
-            } else if (choice == 4) {
-                disciplines.add(brystsvømning);
-                System.out.println(brystsvømning.getName() + " er blevet tilføjet\n");
-            } else if (choice == 9) {
+            if (choice == 9 ) {
                 addingDiciplines = false;
-                System.out.println("Tilføjet disciplin(er): " + disciplines + "\n");
-            } else {
+            } else if (choice <= 0 || choice >= 5) {
                 msg.errorMessageInt();
+            } else {
+                disciplinesNums.add(choice);
             }
+        }
+
+        ArrayList<Discipline> disciplines = new ArrayList<>();
+
+        for (Integer disciplineNum : disciplinesNums) {
+            disciplines.add(disciplineMap.get(disciplineNum));
         }
         return new ArrayList<>(disciplines);
     }

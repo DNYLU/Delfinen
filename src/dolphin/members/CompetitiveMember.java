@@ -1,8 +1,7 @@
 package dolphin.members;
 
-import dolphin.members.disciplines.*;
-
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * @author David
@@ -27,25 +26,11 @@ public class CompetitiveMember extends Member {
         String[] memberInfo = line.split(",");
         String[] disciplines = memberInfo[7].split(":");
 
+        for (String disciplineString : disciplines) {
+            Discipline discipline = new Discipline();
+            discipline.setDataFromFileLine(disciplineString);
 
-        Butterfly butterfly = new Butterfly();
-        Crawl crawl = new Crawl();
-        Backcrawl backcrawl = new Backcrawl();
-        BreastStroke breastStroke = new BreastStroke();
-
-        for (int i = 0; i < disciplines.length; i++) {
-            Discipline discipline = new Butterfly();
-            discipline.setDataFromFileLine(disciplines[i]);
-
-            if (discipline.getName().equals(butterfly.getName())) {
-                this.disciplines.add((Butterfly) discipline);
-            } else if (discipline.getName().equals(crawl.getName())) {
-                this.disciplines.add(discipline);
-            } else if (discipline.getName().equals(backcrawl.getName())) {
-                this.disciplines.add(discipline);
-            } else {
-                this.disciplines.add(discipline);
-            }
+            this.disciplines.add(discipline);
         }
     }
 

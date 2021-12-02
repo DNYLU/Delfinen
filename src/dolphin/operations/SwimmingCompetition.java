@@ -2,13 +2,12 @@ package dolphin.operations;
 
 import dolphin.file.FileApi;
 import dolphin.members.CompetitiveMember;
-import dolphin.members.Member;
-import dolphin.members.disciplines.*;
+import dolphin.members.Discipline;
+import dolphin.members.Disciplines;
 import dolphin.util.Date;
 import dolphin.util.MSG;
 import dolphin.util.SwimmingTime;
 import dolphin.util.UserInput;
-import dolphin.operations.FindCompetitiveMember;
 import dolphin.util.CompetitionResult;
 
 import java.time.format.DateTimeParseException;
@@ -65,14 +64,14 @@ public class SwimmingCompetition {
             if (choice >= 0 && choice < disciplines.size()) {
                 String disciplineName = disciplines.get(choice).getName();
 
-                if (disciplineName.equals(new Butterfly().getName())) {
-                    discipline = new Butterfly();
-                } else if (disciplineName.equals(new Crawl().getName())) {
-                    discipline = new Crawl();
-                } else if (disciplineName.equals(new Backcrawl().getName())) {
-                    discipline = new Backcrawl();
+                if (disciplineName.equals(Disciplines.BUTTERFLY.getName())) {
+                    discipline = new Discipline(Disciplines.BUTTERFLY.getName());
+                } else if (disciplineName.equals(Disciplines.CRAWL.getName())) {
+                    discipline = new  Discipline(Disciplines.CRAWL.getName());
+                } else if (disciplineName.equals(Disciplines.BACK_CRAWL.getName())) {
+                    discipline = new Discipline(Disciplines.BACK_CRAWL.getName());
                 } else {
-                    discipline = new BreastStroke();
+                    discipline = new Discipline(Disciplines.BREAST_STROKE.getName());
                 }
             } else {
                 System.out.println("Kunne ikke finde disciplin. (Index starter på 0).");

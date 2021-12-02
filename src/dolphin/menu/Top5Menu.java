@@ -1,10 +1,7 @@
 package dolphin.menu;
 
 import dolphin.Menu;
-import dolphin.members.disciplines.Backcrawl;
-import dolphin.members.disciplines.BreastStroke;
-import dolphin.members.disciplines.Butterfly;
-import dolphin.members.disciplines.Crawl;
+import dolphin.members.Disciplines;
 import dolphin.util.Top5;
 
 /**
@@ -31,19 +28,19 @@ public class Top5Menu {
             int choice = menu.readChoice();
             switch (choice) {
                 case 1:
-                    top5.run(new Backcrawl().getName());
+                    top5.run(Disciplines.BACK_CRAWL.getName());
                     break;
 
                 case 2:
-                    top5.run(new BreastStroke().getName());
+                    top5.run(Disciplines.BREAST_STROKE.getName());
                     break;
 
                 case 3:
-                    top5.run(new Butterfly().getName());
+                    top5.run(Disciplines.BUTTERFLY.getName());
                     break;
 
                 case 4:
-                    top5.run(new Crawl().getName());
+                    top5.run(Disciplines.CRAWL.getName());
                     break;
 
                 case 9:

@@ -1,8 +1,6 @@
 package dolphin.util;
 
-import dolphin.members.CompetitiveMember;
-import dolphin.members.disciplines.Discipline;
-import dolphin.operations.SwimmingCompetition;
+import dolphin.members.Discipline;
 
 /**
  * @author Lu
