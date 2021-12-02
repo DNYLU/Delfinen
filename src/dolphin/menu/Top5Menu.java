@@ -23,7 +23,7 @@ public class Top5Menu {
         menuItems[3] = "3. Butterfly";
         menuItems[4] = "4. Crawl";
 
-        menuItems[9] = "\n9. QUIT"; // Kald det noget andet
+        menuItems[9] = "\n9. TILBAGE"; // Kald det noget andet
 
         boolean checkChoice = true;
         do {
@@ -47,7 +47,6 @@ public class Top5Menu {
                     break;
 
                 case 9:
-                    System.out.println("Slutter programmet");
                     checkChoice = false;
                     break;
 

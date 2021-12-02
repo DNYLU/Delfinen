@@ -17,7 +17,7 @@ public class Coach {
         menuItems[2] = "2. Opret stævne.";
         menuItems[3] = "3. Vis klubbens Top 5";
 
-        menuItems[9] = "\n9. QUIT"; // Kald det noget andet
+        menuItems[9] = "\n9. TILBAGE"; // Kald det noget andet
 
         boolean checkChoice = true;
         do {
@@ -39,7 +39,6 @@ public class Coach {
                     break;
 
                 case 9:
-                    System.out.println("Slutter programmet");
                     checkChoice = false;
                     break;
 

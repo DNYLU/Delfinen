@@ -37,7 +37,6 @@ public class Top5 {
         ArrayList<CompetitiveMember> sortedJunior = new ArrayList<>();
 
         for (CompetitiveMember member : competitiveMembers) {
-            // Dette bliver lavet for, at kunne gøre det første bogstav stort
             if (member.getAgeGroup().equals(AgeGroup.JUNIOR)) {
                 sortedJunior.add(member);
             }

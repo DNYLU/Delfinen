@@ -16,7 +16,7 @@ public class Chairman {
         menuItems[1] = "1. Opret nyt medlem.";
         menuItems[2] = "2. Vis medlemmer af Delfinen.";
 
-        menuItems[9] = "\n9. QUIT"; // Kald det noget andet
+        menuItems[9] = "\n9. TILBAGE"; // Kald det noget andet
 
         boolean checkChoice = true;
         do {
@@ -34,7 +34,6 @@ public class Chairman {
                     break;
 
                 case 9:
-                    System.out.println("Slutter programmet");
                     checkChoice = false;
                     break;
 
