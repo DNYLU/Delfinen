@@ -14,7 +14,7 @@ public class Treasurer {
         String[] menuItems = new String[10];
         Menu menu = new Menu("MENU", "-----KASSERER-----", menuItems);
         menuItems[1] = "1. Vis medlemmer i restance.\"";
-        menuItems[2] = "2. Vis forventet kontigent.";
+        menuItems[2] = "2. Vis forventet kontingent.";
 
         menuItems[9] = "\n9. TILBAGE"; // Kald det noget andet
 
