@@ -32,6 +32,7 @@ public class Coach {
                 case 2:
                     SwimmingCompetition swimmingCompetition = new SwimmingCompetition();
                     swimmingCompetition.run();
+                    break;
 
                 case 3:
                     Top5Menu top5Menu = new Top5Menu();
