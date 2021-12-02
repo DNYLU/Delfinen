@@ -5,6 +5,10 @@ import dolphin.operations.Registration;
 import dolphin.operations.SwimmingCompetition;
 import dolphin.util.Top5;
 
+/**
+ * @author Lu
+ */
+
 public class Coach {
     public void run() {
         String[] menuItems = new String[10];

@@ -2,7 +2,11 @@ package dolphin.members;
 
 import dolphin.util.Date;
 
-// Lu og Dannie
+/**
+ * @author Lu
+ * @author David
+ * @author Dannie
+ */
 public class Member {
     private int id;
     //Personal info

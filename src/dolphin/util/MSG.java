@@ -1,6 +1,8 @@
 package dolphin.util;
 
-// Lu
+/**
+ * @author Lu
+ */
 public class MSG { //Klasse til evt. fejlbeskeder
 
     public void errorMessageInt() {

@@ -3,11 +3,15 @@ package dolphin.members.disciplines;
 import dolphin.util.Date;
 import dolphin.util.SwimmingTime;
 
-// Umaid & David
-public abstract class Discipline implements Comparable<Discipline> {
-  private Date date;
-  private SwimmingTime swimmingTime;
-  private String name;
+/**
+ * @author David
+ * @author Lu
+ */
+
+public abstract class Discipline {
+    private Date date;
+    private SwimmingTime swimmingTime;
+    private String name;
 
 
   Discipline(String name) {

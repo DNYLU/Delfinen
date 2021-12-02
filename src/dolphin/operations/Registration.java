@@ -13,6 +13,11 @@ import dolphin.operations.FindCompetitiveMember;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 
+/**
+ * @author Lu
+ * @author David
+ */
+
 public class Registration {
     MSG msg = new MSG();
     Date date = new Date();

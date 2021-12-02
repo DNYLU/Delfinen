@@ -5,6 +5,10 @@ import dolphin.members.Member;
 import dolphin.util.UserInput;
 import dolphin.file.FileApi;
 
+/**
+ * @author Lu
+ */
+
 public class FindCompetitiveMember {
 
     UserInput userInput = new UserInput();

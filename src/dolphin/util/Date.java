@@ -2,7 +2,10 @@ package dolphin.util;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-// Dannie & David
+/**
+ * @author David
+ * @author Dannie
+ */
 public class Date {
 
   private LocalDate date;

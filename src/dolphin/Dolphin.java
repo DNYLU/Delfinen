@@ -8,6 +8,10 @@ import dolphin.operations.CreateMember;
 import dolphin.operations.DebtMembers;
 import dolphin.operations.Registration;
 
+/**
+ * @author Lu
+ */
+
 public class Dolphin {
     public static void main(String[] args) {
         Dolphin dolphin = new Dolphin();

@@ -1,6 +1,11 @@
 package dolphin;
 
 import java.util.Scanner;
+
+/**
+ * @author Lu
+ */
+
 public class Menu {
     private String menuHeader;
     private String leadText;

@@ -4,6 +4,9 @@ import dolphin.file.FileApi;
 
 import java.util.ArrayList;
 
+/**
+ * @author Dannie
+ */
 public class Contingent {
   private double totalContingent;
 
