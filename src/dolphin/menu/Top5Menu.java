@@ -1,8 +1,7 @@
 package dolphin.menu;
 
-import dolphin.Menu;
 import dolphin.members.Disciplines;
-import dolphin.util.Top5;
+import dolphin.operations.Top5;
 
 /**
  * @author Lu

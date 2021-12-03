@@ -1,7 +1,6 @@
 package dolphin.menu;
 
-import dolphin.Menu;
-import dolphin.members.Contingent;
+import dolphin.operations.Contingent;
 import dolphin.operations.DebtMembers;
 
 public class Treasurer {

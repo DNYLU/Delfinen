@@ -1,4 +1,4 @@
-package dolphin;
+package dolphin.menu;
 
 import java.util.Scanner;
 

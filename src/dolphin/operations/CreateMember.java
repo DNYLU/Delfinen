@@ -14,14 +14,11 @@ import java.util.HashSet;
  */
 
 public class CreateMember {
-    public ArrayList<Member> allMembers = new ArrayList<>(); //TEST 1
-    public ArrayList<Member> casualMembers = new ArrayList<>(); //TEST 1
-    public ArrayList<CompetitiveMember> competitiveMembers = new ArrayList<>(); //TEST 1
+    public ArrayList<Member> casualMembers = new ArrayList<>();
+    public ArrayList<CompetitiveMember> competitiveMembers = new ArrayList<>();
 
     UserInput userInput = new UserInput();
     MSG msg = new MSG();
-    Discipline discipline;
-    //FileManager fileManager = new FileManager();// Find en path
 
     public void run() {
             createMember();

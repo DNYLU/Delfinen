@@ -1,6 +1,5 @@
-package dolphin;
+package dolphin.members;
 
-import dolphin.members.CompetitiveMember;
 import dolphin.util.SwimmingTime;
 
 public class MemberTime implements Comparable<MemberTime> {

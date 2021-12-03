@@ -1,6 +1,7 @@
-package dolphin.members;
+package dolphin.operations;
 
 import dolphin.file.FileApi;
+import dolphin.members.Member;
 
 import java.util.ArrayList;
 

@@ -97,14 +97,6 @@ public class FileManager {
     }
 
     /**
-     * @param source the string that will be written to a file, each white space will be replaced by a comma
-     * @return a boolean, true if the file was created and false if not
-     */
-    public boolean overwriteFile(String source) {
-        return this.writeToCsv(source, false);
-    }
-
-    /**
      * @return all the members from the file, each member is represented as a string array inside an ArrayList
      */
     public ArrayList<String[]> readLinesFromCsv() {

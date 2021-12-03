@@ -1,4 +1,8 @@
 package dolphin.util;
+import dolphin.file.FileApi;
+import dolphin.members.CompetitiveMember;
+import dolphin.members.Member;
+
 import java.util.Scanner;
 
 /**
@@ -27,12 +31,28 @@ public class UserInput {
         return scan.nextInt();
     }
 
-    public double getDoubleInput() {
-        while (!scan.hasNextDouble()) {
-            msg.errorMessageInt();
-            scan.next();
+    public CompetitiveMember findID() {
+        Member member = null;
+        FileApi fileApi = new FileApi();
+
+        // Finder member via ID
+        System.out.println("Indtast ID: ");
+        boolean findMember = true;
+
+        while (findMember) {
+            int id = this.getIntInput();
+            member = fileApi.findMember(id);
+
+            if (member == null) {
+                System.out.println("Medlem med ID: " + id + " blev ikke fundet");
+            } else if (!(member instanceof CompetitiveMember)) {
+                System.out.println("Medlem er ikke en konkurrencesvømmer");
+            } else {
+                member.getMemberName();
+                findMember = false;
+            }
         }
-        return scan.nextDouble();
+        return (CompetitiveMember)member;
     }
 }
 

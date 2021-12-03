@@ -1,6 +1,6 @@
-package dolphin.util;
+package dolphin.operations;
 
-import dolphin.MemberTime;
+import dolphin.members.MemberTime;
 import dolphin.file.FileApi;
 import dolphin.members.AgeGroup;
 import dolphin.members.CompetitiveMember;
@@ -18,8 +18,6 @@ import java.util.Collections;
 
 public class Top5 {
     FileApi fileApi = new FileApi();
-    AllMembers allMembers = new AllMembers();
-
 
     private ArrayList<CompetitiveMember> sortSeniorCompetitiveMembers() {
         ArrayList<CompetitiveMember> competitiveMembers = fileApi.getCompetitiveMembers();

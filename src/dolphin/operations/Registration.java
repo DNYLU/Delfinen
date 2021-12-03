@@ -1,10 +1,7 @@
 package dolphin.operations;
 
 import dolphin.members.Discipline;
-import dolphin.util.UserInput;
-import dolphin.util.MSG;
-import dolphin.util.Date;
-import dolphin.util.SwimmingTime;
+import dolphin.util.*;
 import dolphin.file.FileApi;
 import dolphin.members.CompetitiveMember;
 
@@ -19,9 +16,7 @@ import java.util.ArrayList;
 public class Registration {
     MSG msg = new MSG();
     Date date = new Date();
-    SwimmingTime swimmingTime = new SwimmingTime();
     FileApi fileApi = new FileApi();
-    FindCompetitiveMember findCompetitiveMember = new FindCompetitiveMember();
     UserInput userInput = new UserInput();
   /*
     Denne klasse skal kunne registrerer svømmerne til træning og angive placering og tid.
@@ -38,7 +33,7 @@ public class Registration {
             // Finder member via ID
             System.out.println("-----SVØMMETID-----");
 
-            CompetitiveMember member = findCompetitiveMember.findID();
+            CompetitiveMember member = userInput.findID();
 
             ArrayList<Discipline> disciplines = member.getDisciplines();
             Discipline discipline;

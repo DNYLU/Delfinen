@@ -32,31 +32,6 @@ public class FileApi {
         this.editMember(member, this.competitivePath);
     }
 
-    public void editCasualMember(Member member) {
-        this.editMember(member, this.casualPath);
-    }
-
-    private void overWriteAllMembers(String path) {
-        FileManager fileManager = new FileManager(path);
-
-        ArrayList<Member> allMembers = this.getAllMembers();
-        StringBuilder allMembersString = new StringBuilder();
-
-        for (Member member : allMembers) {
-            allMembersString.append(member.toFileString()).append("\n");
-        }
-        System.out.println(allMembersString);
-        fileManager.overwriteFile(allMembersString.toString());
-    }
-
-    public void overWriteCompetitiveMembers() {
-        this.overWriteAllMembers(this.competitivePath);
-    }
-
-    public void overWriteCasualMembers() {
-        this.overWriteAllMembers(this.casualPath);
-    }
-
     public void insertCompetitionResult(CompetitionResult competitionResult, int id) {
         String path = "Members";
         FileManager fileManager = new FileManager(path);

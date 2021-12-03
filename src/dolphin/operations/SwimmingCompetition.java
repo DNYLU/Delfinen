@@ -4,11 +4,7 @@ import dolphin.file.FileApi;
 import dolphin.members.CompetitiveMember;
 import dolphin.members.Discipline;
 import dolphin.members.Disciplines;
-import dolphin.util.Date;
-import dolphin.util.MSG;
-import dolphin.util.SwimmingTime;
-import dolphin.util.UserInput;
-import dolphin.util.CompetitionResult;
+import dolphin.util.*;
 
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
@@ -23,7 +19,6 @@ public class SwimmingCompetition {
     SwimmingTime swimmingTime = new SwimmingTime();
     FileApi fileApi = new FileApi();
     UserInput userInput = new UserInput();
-    FindCompetitiveMember findCompetitiveMember = new FindCompetitiveMember();
     CompetitionResult competitionResult = new CompetitionResult();
     Date date = new Date();
 
@@ -50,7 +45,7 @@ public class SwimmingCompetition {
             // Finder member via ID
 
             // Find ID på medlem
-            CompetitiveMember member = findCompetitiveMember.findID();
+            CompetitiveMember member = userInput.findID();
             competitionResult.setMemberID(member.getId());
 
             ArrayList<Discipline> disciplines = member.getDisciplines();

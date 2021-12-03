@@ -88,20 +88,8 @@ public class Member {
         return memberName;
     }
 
-    public int getMemberYearOfBirth() {
-        return memberYearOfBirth;
-    }
-
-    public SubscriptionType getSubscriptionType() {
-        return subscriptionType;
-    }
-
     public AgeGroup getAgeGroup() {
         return ageGroup;
-    }
-
-    public String getSwimmerType() {
-        return swimmerType;
     }
 
     public double getPaymentAmount() {
@@ -111,6 +99,7 @@ public class Member {
     public double getDebtAmount() {
         return this.subscription.getDebtAmount();
     }
+
     public int getId() { return this.id; }
 
 }

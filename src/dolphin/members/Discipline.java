@@ -25,9 +25,6 @@ public class Discipline {
         return this.name;
     }
 
-    public String getFormattedTime() {
-        return this.swimmingTime.toString();
-    }
 
     public void setSwimmingTime(SwimmingTime swimmingTime) {
         if (this.swimmingTime == null) {

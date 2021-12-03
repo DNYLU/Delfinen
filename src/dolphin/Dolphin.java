@@ -1,12 +1,8 @@
 package dolphin;
-import dolphin.members.Contingent;
 import dolphin.menu.Chairman;
 import dolphin.menu.Coach;
+import dolphin.menu.Menu;
 import dolphin.menu.Treasurer;
-import dolphin.operations.AllMembers;
-import dolphin.operations.CreateMember;
-import dolphin.operations.DebtMembers;
-import dolphin.operations.Registration;
 
 /**
  * @author Lu

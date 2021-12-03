@@ -1,9 +1,7 @@
 package dolphin.menu;
 
-import dolphin.Menu;
 import dolphin.operations.Registration;
 import dolphin.operations.SwimmingCompetition;
-import dolphin.util.Top5;
 
 /**
  * @author Lu
