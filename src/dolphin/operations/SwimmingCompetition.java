@@ -16,7 +16,6 @@ import java.util.ArrayList;
 
 public class SwimmingCompetition {
     MSG msg = new MSG();
-    SwimmingTime swimmingTime = new SwimmingTime();
     FileApi fileApi = new FileApi();
     UserInput userInput = new UserInput();
     CompetitionResult competitionResult = new CompetitionResult();
@@ -34,7 +33,6 @@ public class SwimmingCompetition {
     private void swimmingCompetition() {
         System.out.println("-----STÆVNE-----");
         System.out.println("Indtast stævne: ");
-        String competition = userInput.getStringInput();
 
         lapTime();
     }
@@ -46,7 +44,7 @@ public class SwimmingCompetition {
 
             // Find ID på medlem
             CompetitiveMember member = userInput.findID();
-            competitionResult.setMemberID(member.getId());
+            competitionResult.setMemberId(member.getId());
 
             ArrayList<Discipline> disciplines = member.getDisciplines();
             Discipline discipline;
@@ -90,7 +88,7 @@ public class SwimmingCompetition {
 
             checkChoice = false;
 
-            fileApi.insertCompetitionResult(this.competitionResult, this.competitionResult.getMemberID());
+            fileApi.insertCompetitionResult(this.competitionResult, this.competitionResult.getMemberId());
         }
     }
 

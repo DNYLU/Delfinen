@@ -8,7 +8,7 @@ import dolphin.members.Discipline;
  */
 
 public class CompetitionResult {
-    int memberID;
+    int memberId;
     int placement;
     Discipline discipline;
 
@@ -22,11 +22,11 @@ public class CompetitionResult {
         this.discipline = discipline;
     }
 
-    public int getMemberID() {
-        return memberID;
+    public int getMemberId() {
+        return memberId;
     }
 
-    public void setMemberID(int memberID) {
-        this.memberID = memberID;
+    public void setMemberId(int memberId) {
+        this.memberId = memberId;
     }
 }

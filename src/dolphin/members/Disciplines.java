@@ -1,5 +1,8 @@
 package dolphin.members;
 
+/**
+ * @author David
+ */
 public enum Disciplines {
     BUTTERFLY("Butterfly"),
     BREAST_STROKE ("Brystsvømning"),

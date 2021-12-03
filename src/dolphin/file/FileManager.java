@@ -12,7 +12,6 @@ import java.util.ArrayList;
 
 /**
  * used to write and read members from a specified file
- *
  * @author David
  */
 public class FileManager {

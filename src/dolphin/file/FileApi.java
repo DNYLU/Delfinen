@@ -6,6 +6,10 @@ import dolphin.util.CompetitionResult;
 
 import java.util.ArrayList;
 
+
+/**
+ * @author David
+ */
 public class FileApi {
     private final String casualPath = "casualFile.csv";
     private final String competitivePath = "competitiveFile.csv";
